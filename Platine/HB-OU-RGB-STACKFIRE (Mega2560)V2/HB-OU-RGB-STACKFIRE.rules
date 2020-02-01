@@ -1,0 +1,198 @@
+
+(rules PCB HB-OU-RGB-STACKFIRE
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 2057)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 300.2 (type default_+5V))
+    (clear 500.2 (type default_+5Vzu))
+    (clear 750.2 (type default_230V))
+    (clear 50.0 (type smd_smd))
+    (clear 300.2 (type smd_+5V))
+    (clear 500.2 (type smd_+5Vzu))
+    (clear 750.2 (type smd_230V))
+    (clear 300.2 (type "kicad_default"_+5V))
+    (clear 500.2 (type "kicad_default"_+5Vzu))
+    (clear 750.2 (type "kicad_default"_230V))
+    (clear 300.2 (type +3V3_+5V))
+    (clear 500.2 (type +3V3_+5Vzu))
+    (clear 750.2 (type +3V3_230V))
+    (clear 300.2 (type +5V_+5V))
+    (clear 500.2 (type +5V_+5Vzu))
+    (clear 750.2 (type +5V_230V))
+    (clear 500.2 (type +5Vzu_+5Vzu))
+    (clear 750.2 (type +5Vzu_230V))
+    (clear 750.2 (type 230V_230V))
+  )
+  (padstack "Via[0-1]_600:400_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_600:400_um" "Via[0-1]_600:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_600:400_um-kicad_default" "Via[0-1]_600:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_600:400_um-+3V3" "Via[0-1]_600:400_um" +3V3
+  )
+  (via 
+    "Via[0-1]_800:400_um-+3V3" "Via[0-1]_800:400_um" +3V3
+  )
+  (via 
+    "Via[0-1]_600:400_um-+5V" "Via[0-1]_600:400_um" +5V
+  )
+  (via 
+    "Via[0-1]_800:400_um-+5V" "Via[0-1]_800:400_um" +5V
+  )
+  (via 
+    "Via[0-1]_600:400_um-+5Vzu" "Via[0-1]_600:400_um" +5Vzu
+  )
+  (via 
+    "Via[0-1]_800:400_um-+5Vzu" "Via[0-1]_800:400_um" +5Vzu
+  )
+  (via 
+    "Via[0-1]_600:400_um-230V" "Via[0-1]_600:400_um" 230V
+  )
+  (via 
+    "Via[0-1]_800:400_um-230V" "Via[0-1]_800:400_um" 230V
+  )
+  (via_rule
+    default "Via[0-1]_600:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_600:400_um-kicad_default"
+  )
+  (via_rule
+    +3V3 "Via[0-1]_600:400_um-+3V3"
+  )
+  (via_rule
+    +5V "Via[0-1]_600:400_um-+5V"
+  )
+  (via_rule
+    +5Vzu "Via[0-1]_600:400_um-+5Vzu"
+  )
+  (via_rule
+    230V "Via[0-1]_800:400_um-230V"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    +3V3 GND "Net-(U2-Pad6)" /D2 "/WS28XX_1" "Net-(B1-PadAREF)" "Net-(B1-PadA15)" "Net-(B1-PadA13)"
+    "Net-(B1-PadA11)" "Net-(B1-PadA9)" "Net-(B1-PadA7)" "Net-(B1-PadA5)" "Net-(B1-PadA3)" "Net-(B1-PadA1)" "Net-(B1-PadA14)" "Net-(B1-PadA12)"
+    "Net-(B1-PadA10)" "Net-(B1-PadA8)" "Net-(B1-PadA6)" "Net-(B1-PadA4)" "Net-(B1-PadA2)" "Net-(B1-PadA0)" "/HV4(SS)" "/HV3(SCK)"
+    "/HV2(MOSI)" "/HV1(MISO)" "/LV1(MISO)" "/LV2(MOSI)" "/LV3(SCK)" "/LV4(SS)" "Net-(B1-Pad4)" "Net-(B1-Pad8)"
+    "Net-(B1-PadRESE)" "Net-(B1-Pad1)" "Net-(B1-Pad5V@2)" "Net-(B1-Pad0)" "Net-(B1-Pad6)" "Net-(B1-Pad10)" "Net-(B1-Pad12)" "Net-(B1-Pad14)"
+    "Net-(B1-Pad16)" "Net-(B1-Pad18)" "Net-(B1-Pad20)" "Net-(B1-Pad48)" "Net-(B1-Pad49)" "Net-(B1-Pad47)" "Net-(B1-Pad39)" "Net-(B1-Pad37)"
+    "Net-(B1-Pad35)" "Net-(B1-Pad33)" "Net-(B1-Pad46)" "Net-(B1-Pad38)" "Net-(B1-Pad36)" "Net-(B1-Pad34)" "Net-(B1-Pad32)" "Net-(B1-Pad40)"
+    "Net-(B1-Pad41)" "Net-(B1-Pad42)" "Net-(B1-Pad43)" "Net-(B1-Pad44)" "Net-(B1-Pad45)" "/WS28XX_2" "/WS28XX_3" "/WS28XX_4"
+    "/WS28XX_6" "/WS28XX_7" "/WS28XX_8" "/WS28XX_9" "/WS28XX_10" "/WS28XX_11" "/WS28XX_12" "Net-(D1-Pad2)"
+    "/WS28XX_13" "/WS28XX_14" "/WS28XX_15" "/WS28XX_16" "/WS28XX_17" "/WS28XX_18" "/WS28XX_19" "/WS28XX_5"
+    "/WS28XX_20"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class +3V3
+    (clearance_class +3V3)
+    (via_rule +3V3)
+    (rule
+      (width 350.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class +5V
+    +VDC +5V
+    (clearance_class +5V)
+    (via_rule +5V)
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class +5Vzu
+    "/VCC_WS28XX_1_1" "/VCC_WS28XX_1_2" "/VCC_WS28XX_2_1" "/VCC_WS28XX_2_2"
+    (clearance_class +5Vzu)
+    (via_rule +5Vzu)
+    (rule
+      (width 1500.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class 230V
+    "Net-(F1-Pad1)" "Net-(F1-Pad2)" "Net-(J1-Pad2)" "Net-(J1-Pad3)"
+    (clearance_class 230V)
+    (via_rule 230V)
+    (rule
+      (width 3000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

@@ -1,0 +1,1357 @@
+EESchema Schematic File Version 4
+LIBS:HB-OU-RGB-STACKFIRE-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "HB-OU-RGB-STACKFIRE"
+Date "2020-01-20"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Homebrew:CC1101 U2
+U 1 1 5E19D65C
+P 2260 6175
+F 0 "U2" H 2510 7012 60  0000 C CNN
+F 1 "CC1101" H 2510 6906 60  0000 C CNN
+F 2 "Homebrew:CC1101" H 2260 6175 60  0001 C CNN
+F 3 "" H 2260 6175 60  0001 C CNN
+	1    2260 6175
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 5E19DA30
+P 1025 3755
+F 0 "D1" H 990 3860 50  0000 C CNN
+F 1 "LED" H 1030 3660 50  0000 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 1025 3755 50  0001 C CNN
+F 3 "~" H 1025 3755 50  0001 C CNN
+	1    1025 3755
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5E19DD64
+P 1325 3755
+F 0 "R1" V 1400 3815 50  0000 C CNN
+F 1 "330" V 1315 3750 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" V 1255 3755 50  0001 C CNN
+F 3 "~" H 1325 3755 50  0001 C CNN
+	1    1325 3755
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:CP_Small C2
+U 1 1 5E19E000
+P 1350 1185
+F 0 "C2" H 1438 1231 50  0000 L CNN
+F 1 "10uF" H 1438 1140 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 1350 1185 50  0001 C CNN
+F 3 "~" H 1350 1185 50  0001 C CNN
+	1    1350 1185
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5E19E4CE
+P 805 4155
+F 0 "#PWR0101" H 805 3905 50  0001 C CNN
+F 1 "GND" H 810 3982 50  0000 C CNN
+F 2 "" H 805 4155 50  0001 C CNN
+F 3 "" H 805 4155 50  0001 C CNN
+	1    805  4155
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	805  3755 875  3755
+Wire Wire Line
+	805  3755 805  4155
+Wire Wire Line
+	3060 5625 3465 5625
+Wire Wire Line
+	3060 5725 3465 5725
+Wire Wire Line
+	3060 5825 3465 5825
+Wire Wire Line
+	3060 6025 3465 6025
+Wire Wire Line
+	3060 6125 3460 6125
+$Comp
+L power:+3.3V #PWR0103
+U 1 1 5E1A0869
+P 1800 1405
+F 0 "#PWR0103" H 1800 1255 50  0001 C CNN
+F 1 "+3.3V" H 1815 1578 50  0000 C CNN
+F 2 "" H 1800 1405 50  0001 C CNN
+F 3 "" H 1800 1405 50  0001 C CNN
+	1    1800 1405
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0104
+U 1 1 5E1A08FB
+P 1875 5555
+F 0 "#PWR0104" H 1875 5405 50  0001 C CNN
+F 1 "+3.3V" H 1890 5728 50  0000 C CNN
+F 2 "" H 1875 5555 50  0001 C CNN
+F 3 "" H 1875 5555 50  0001 C CNN
+	1    1875 5555
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0105
+U 1 1 5E1A1493
+P 1350 1005
+F 0 "#PWR0105" H 1350 855 50  0001 C CNN
+F 1 "+3.3V" H 1365 1178 50  0000 C CNN
+F 2 "" H 1350 1005 50  0001 C CNN
+F 3 "" H 1350 1005 50  0001 C CNN
+	1    1350 1005
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5E1A1790
+P 1350 1340
+F 0 "#PWR0106" H 1350 1090 50  0001 C CNN
+F 1 "GND" H 1355 1167 50  0000 C CNN
+F 2 "" H 1350 1340 50  0001 C CNN
+F 3 "" H 1350 1340 50  0001 C CNN
+	1    1350 1340
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 1005 1350 1085
+Wire Wire Line
+	1350 1285 1350 1340
+Wire Wire Line
+	1800 1405 1800 1455
+Text Label 3465 5625 2    50   ~ 0
+LV2(MOSI)
+Text Label 3465 5725 2    50   ~ 0
+LV3(SCK)
+Text Label 3465 5825 2    50   ~ 0
+LV1(MISO)
+Text Label 3465 6025 2    50   ~ 0
+D2
+Text Label 3460 6125 2    50   ~ 0
+LV4(SS)
+Wire Wire Line
+	1875 5555 1875 5625
+Wire Wire Line
+	1875 5625 1960 5625
+$Comp
+L power:GND #PWR0109
+U 1 1 5E1A40AF
+P 1875 6265
+F 0 "#PWR0109" H 1875 6015 50  0001 C CNN
+F 1 "GND" H 1880 6092 50  0000 C CNN
+F 2 "" H 1875 6265 50  0001 C CNN
+F 3 "" H 1875 6265 50  0001 C CNN
+	1    1875 6265
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1875 6265 1875 6175
+Wire Wire Line
+	1875 6175 1960 6175
+$Comp
+L power:GND #PWR0110
+U 1 1 5E1A4ADD
+P 1940 5055
+F 0 "#PWR0110" H 1940 4805 50  0001 C CNN
+F 1 "GND" H 1945 4882 50  0000 C CNN
+F 2 "" H 1940 5055 50  0001 C CNN
+F 3 "" H 1940 5055 50  0001 C CNN
+	1    1940 5055
+	1    0    0    -1  
+$EndComp
+NoConn ~ 3060 5925
+Text Label 7975 4340 0    50   ~ 0
+WS28XX_7
+Wire Wire Line
+	1910 6880 2045 6880
+$Comp
+L Device:Fuse F1
+U 1 1 5E275ED0
+P 1760 6880
+F 0 "F1" H 1840 6940 50  0000 C CNN
+F 1 "Fuse" H 1880 6870 50  0000 C CNN
+F 2 "Fuse:Fuse_Schurter_318265" V 1690 6880 50  0001 C CNN
+F 3 "https://www.reichelt.de/sicherungshalter-5x20mm-max-10a-250v-pl-ogn-22-5-p35195.html?&trstct=pos_10" H 1760 6880 50  0001 C CNN
+	1    1760 6880
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:Varistor RV1
+U 1 1 5E275ED7
+P 2045 7030
+F 0 "RV1" V 2125 7000 50  0000 L CNN
+F 1 "VDR-0,6 250" H 1485 7025 50  0000 L CNN
+F 2 "Varistor:RV_Disc_D9mm_W5.7mm_P5mm" V 1975 7030 50  0001 C CNN
+F 3 "~" H 2045 7030 50  0001 C CNN
+	1    2045 7030
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5E275EDE
+P 4665 7075
+F 0 "C1" H 4780 7121 50  0000 L CNN
+F 1 "100nF" H 4780 7030 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 4703 6925 50  0001 C CNN
+F 3 "~" H 4665 7075 50  0001 C CNN
+	1    4665 7075
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J1
+U 1 1 5E275EE5
+P 1105 6780
+F 0 "J1" V 1195 6780 50  0000 C CNN
+F 1 "230V" V 1260 6780 50  0000 C CNN
+F 2 "TerminalBlock_WAGO:TerminalBlock_WAGO_236-103_1x03_P5.00mm_45Degree" H 1105 6780 50  0001 C CNN
+F 3 "~" H 1105 6780 50  0001 C CNN
+	1    1105 6780
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5E275EF7
+P 4665 7225
+F 0 "#PWR05" H 4665 6975 50  0001 C CNN
+F 1 "GND" H 4670 7052 50  0000 C CNN
+F 2 "" H 4665 7225 50  0001 C CNN
+F 3 "" H 4665 7225 50  0001 C CNN
+	1    4665 7225
+	1    0    0    -1  
+$EndComp
+Connection ~ 4665 7225
+Connection ~ 2045 7180
+Connection ~ 2045 6880
+Wire Wire Line
+	1305 7180 2045 7180
+Wire Wire Line
+	1305 6880 1390 6880
+Wire Wire Line
+	1305 7180 1305 6940
+Wire Wire Line
+	1305 6940 1350 6940
+Wire Wire Line
+	1350 6940 1350 6780
+Wire Wire Line
+	1350 6780 1305 6780
+Text Label 3865 5055 2    50   ~ 0
+HV4(SS)
+Text Label 3865 4955 2    50   ~ 0
+HV3(SCK)
+Text Label 3865 4855 2    50   ~ 0
+HV2(MOSI)
+Text Label 3865 4755 2    50   ~ 0
+HV1(MISO)
+Wire Wire Line
+	1830 3555 2060 3555
+Text Label 1830 3555 0    50   ~ 0
+D2
+Text Label 4045 2255 2    50   ~ 0
+WS28XX_12
+$Comp
+L Switch:SW_DIP_x01 SW1
+U 1 1 5E19DC6E
+P 1105 4155
+F 0 "SW1" H 1010 4000 50  0000 C CNN
+F 1 "CONFIG" H 1105 4331 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm_H5mm" H 1105 4155 50  0001 C CNN
+F 3 "" H 1105 4155 50  0001 C CNN
+	1    1105 4155
+	1    0    0    -1  
+$EndComp
+Connection ~ 805  4155
+Wire Wire Line
+	2060 4655 1940 4655
+Wire Wire Line
+	1940 4655 1940 4755
+Wire Wire Line
+	1940 5055 2060 5055
+Connection ~ 1940 5055
+Wire Wire Line
+	1800 1455 2060 1455
+$Comp
+L power:+VDC #PWR01
+U 1 1 5E485BFC
+P 1960 995
+F 0 "#PWR01" H 1960 895 50  0001 C CNN
+F 1 "+VDC" H 1960 1270 50  0000 C CNN
+F 2 "" H 1960 995 50  0001 C CNN
+F 3 "" H 1960 995 50  0001 C CNN
+	1    1960 995 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1960 995  1960 1055
+Wire Wire Line
+	1960 1055 2060 1055
+$Comp
+L power:GND #PWR06
+U 1 1 5E4F5F4B
+P 5225 7225
+F 0 "#PWR06" H 5225 6975 50  0001 C CNN
+F 1 "GND" H 5230 7052 50  0000 C CNN
+F 2 "" H 5225 7225 50  0001 C CNN
+F 3 "" H 5225 7225 50  0001 C CNN
+	1    5225 7225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4665 7225 5225 7225
+Wire Wire Line
+	4045 2255 3460 2255
+NoConn ~ 2060 1555
+NoConn ~ 2060 1655
+NoConn ~ 2060 1755
+NoConn ~ 2060 1855
+NoConn ~ 2060 1955
+NoConn ~ 2060 2055
+NoConn ~ 2060 2155
+NoConn ~ 2060 2255
+NoConn ~ 2060 2355
+NoConn ~ 2060 2455
+NoConn ~ 2060 2555
+NoConn ~ 2060 2655
+NoConn ~ 2060 2755
+NoConn ~ 2060 2855
+NoConn ~ 2060 2955
+NoConn ~ 2060 3055
+NoConn ~ 2060 3155
+NoConn ~ 2060 3255
+NoConn ~ 2060 3355
+NoConn ~ 2060 3455
+NoConn ~ 2060 3955
+NoConn ~ 2060 4355
+NoConn ~ 2060 4555
+NoConn ~ 3460 1355
+NoConn ~ 3460 1555
+NoConn ~ 3460 1755
+NoConn ~ 3460 2955
+NoConn ~ 3460 3155
+NoConn ~ 3460 3355
+NoConn ~ 3460 3555
+NoConn ~ 3460 3755
+NoConn ~ 3460 3955
+NoConn ~ 3460 4155
+NoConn ~ 3460 4355
+NoConn ~ 3460 4455
+NoConn ~ 3460 4555
+NoConn ~ 3460 4655
+Wire Wire Line
+	2060 4755 1940 4755
+Connection ~ 1940 4755
+Wire Wire Line
+	1940 4755 1940 4855
+Wire Wire Line
+	2060 4855 1940 4855
+Connection ~ 1940 4855
+Wire Wire Line
+	1940 4855 1940 4955
+Wire Wire Line
+	2060 4955 1940 4955
+Connection ~ 1940 4955
+Wire Wire Line
+	1940 4955 1940 5055
+$Comp
+L power:+VDC #PWR04
+U 1 1 5E344AA8
+P 4665 6700
+F 0 "#PWR04" H 4665 6600 50  0001 C CNN
+F 1 "+VDC" H 4665 6975 50  0000 C CNN
+F 2 "" H 4665 6700 50  0001 C CNN
+F 3 "" H 4665 6700 50  0001 C CNN
+	1    4665 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4665 6925 4665 6920
+$Comp
+L Connector_Generic:Conn_01x06 J3
+U 1 1 5E34AEC3
+P 5455 1255
+F 0 "J3" H 5405 1550 50  0000 L CNN
+F 1 "LLV" H 5390 865 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 5455 1255 50  0001 C CNN
+F 3 "~" H 5455 1255 50  0001 C CNN
+	1    5455 1255
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x06 J4
+U 1 1 5E34B0DD
+P 6805 1255
+F 0 "J4" H 6760 1545 50  0000 L CNN
+F 1 "LLV" H 6740 865 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 6805 1255 50  0001 C CNN
+F 3 "~" H 6805 1255 50  0001 C CNN
+	1    6805 1255
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5255 1155 4790 1155
+Wire Wire Line
+	5255 1455 4790 1455
+Wire Wire Line
+	5255 1555 4790 1555
+Wire Wire Line
+	6605 1055 6140 1055
+Wire Wire Line
+	6605 1155 6140 1155
+Wire Wire Line
+	6605 1455 6140 1455
+Wire Wire Line
+	6605 1555 6140 1555
+Text Label 4790 1555 0    50   ~ 0
+HV1(MISO)
+Text Label 4790 1455 0    50   ~ 0
+HV2(MOSI)
+Text Label 4790 1155 0    50   ~ 0
+HV3(SCK)
+Text Label 4795 1055 0    50   ~ 0
+HV4(SS)
+Text Label 6140 1555 0    50   ~ 0
+LV1(MISO)
+Text Label 6140 1455 0    50   ~ 0
+LV2(MOSI)
+Text Label 6140 1155 0    50   ~ 0
+LV3(SCK)
+Text Label 6140 1055 0    50   ~ 0
+LV4(SS)
+Wire Wire Line
+	3460 4755 3865 4755
+Wire Wire Line
+	3460 4855 3865 4855
+Wire Wire Line
+	3460 4955 3865 4955
+Wire Wire Line
+	3460 5055 3865 5055
+Wire Notes Line
+	4670 910  4670 1680
+Wire Notes Line
+	4670 1680 6955 1680
+Wire Notes Line
+	6955 1680 6950 935 
+Wire Notes Line
+	4670 910  6950 910 
+Wire Notes Line
+	6950 910  6950 935 
+Text Notes 5200 875  0    50   ~ 0
+SparkFun Logical Level Converter\n
+$Comp
+L power:GND #PWR03
+U 1 1 5E3A6A6F
+P 6410 1255
+F 0 "#PWR03" H 6410 1005 50  0001 C CNN
+F 1 "GND" V 6415 1127 50  0000 R CNN
+F 2 "" H 6410 1255 50  0001 C CNN
+F 3 "" H 6410 1255 50  0001 C CNN
+	1    6410 1255
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5E3A6AC0
+P 5060 1255
+F 0 "#PWR02" H 5060 1005 50  0001 C CNN
+F 1 "GND" V 5065 1127 50  0000 R CNN
+F 2 "" H 5060 1255 50  0001 C CNN
+F 3 "" H 5060 1255 50  0001 C CNN
+	1    5060 1255
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5060 1255 5255 1255
+$Comp
+L SparkFun-Boards:ARDUINO_MEGA_R3FULL B1
+U 1 1 5E30621C
+P 2760 3055
+F 0 "B1" H 2760 5415 45  0000 C CNN
+F 1 "ARDUINO_Mini_MEGA_2560" H 2760 5331 45  0000 C CNN
+F 2 "Homebrew:Mini Mega 2560" H 2760 5205 20  0001 C CNN
+F 3 "" H 2760 3055 50  0001 C CNN
+F 4 "XXX-00000" H 2760 5236 60  0000 C CNN "Feld4"
+	1    2760 3055
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6410 1255 6605 1255
+NoConn ~ 2585 1795
+Wire Wire Line
+	5255 1055 4795 1055
+$Comp
+L Connector_Generic:Conn_01x02 J6
+U 1 1 5E2994D0
+P 5680 6610
+F 0 "J6" H 5600 6285 50  0000 C CNN
+F 1 "5V - WS28XX" H 5600 6376 50  0000 C CNN
+F 2 "digikey-footprints:PinHeader_1x2_P3.96mm_Drill1.6mm" H 5680 6610 50  0001 C CNN
+F 3 "~" H 5680 6610 50  0001 C CNN
+	1    5680 6610
+	-1   0    0    1   
+$EndComp
+Text Label 7975 4690 0    50   ~ 0
+WS28XX_8
+Text Label 7975 5040 0    50   ~ 0
+WS28XX_9
+Text Label 7975 5390 0    50   ~ 0
+WS28XX_10
+Text Label 7980 2240 0    50   ~ 0
+WS28XX_1
+Text Label 7975 2590 0    50   ~ 0
+WS28XX_2
+Text Label 7975 2940 0    50   ~ 0
+WS28XX_3
+Text Label 7975 3290 0    50   ~ 0
+WS28XX_4
+Text Label 7975 3640 0    50   ~ 0
+WS28XX_5
+Text Label 7975 3990 0    50   ~ 0
+WS28XX_6
+Text Label 1475 4055 0    50   ~ 0
+WS28XX_3
+Wire Wire Line
+	2060 4055 1475 4055
+Text Label 1475 4255 0    50   ~ 0
+WS28XX_4
+Wire Wire Line
+	2060 4255 1475 4255
+Text Label 1475 4455 0    50   ~ 0
+WS28XX_5
+Wire Wire Line
+	2060 4455 1475 4455
+Text Label 4045 1055 2    50   ~ 0
+WS28XX_6
+Wire Wire Line
+	4045 1055 3460 1055
+Text Label 4045 1255 2    50   ~ 0
+WS28XX_7
+Wire Wire Line
+	4045 1255 3460 1255
+Text Label 4045 1455 2    50   ~ 0
+WS28XX_8
+Wire Wire Line
+	4045 1455 3460 1455
+Text Label 4045 1655 2    50   ~ 0
+WS28XX_9
+Wire Wire Line
+	4045 1655 3460 1655
+Text Label 4045 1855 2    50   ~ 0
+WS28XX_10
+Wire Wire Line
+	4045 1855 3460 1855
+Text Label 4045 2055 2    50   ~ 0
+WS28XX_11
+Wire Wire Line
+	4045 2055 3460 2055
+Text Label 1475 3655 0    50   ~ 0
+WS28XX_1
+Wire Wire Line
+	2060 3655 1475 3655
+Text Label 1475 3855 0    50   ~ 0
+WS28XX_2
+Wire Wire Line
+	2060 3855 1475 3855
+Wire Wire Line
+	1405 4155 2060 4155
+Wire Wire Line
+	1475 3755 2060 3755
+NoConn ~ 3460 1155
+$Comp
+L power:GND #PWR07
+U 1 1 5E4498C1
+P 5880 6610
+F 0 "#PWR07" H 5880 6360 50  0001 C CNN
+F 1 "GND" H 5885 6437 50  0000 C CNN
+F 2 "" H 5880 6610 50  0001 C CNN
+F 3 "" H 5880 6610 50  0001 C CNN
+	1    5880 6610
+	1    0    0    -1  
+$EndComp
+Text Label 6710 6510 2    50   ~ 0
+VCC_WS28XX_1_2
+$Comp
+L Connector_Generic:Conn_01x03 J2
+U 1 1 5E476D12
+P 1105 6460
+F 0 "J2" V 1195 6460 50  0000 C CNN
+F 1 "230V (OUT 1)" V 1265 6390 50  0000 C CNN
+F 2 "TerminalBlock_WAGO:TerminalBlock_WAGO_236-103_1x03_P5.00mm_45Degree" H 1105 6460 50  0001 C CNN
+F 3 "~" H 1105 6460 50  0001 C CNN
+	1    1105 6460
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1350 6780 1350 6460
+Wire Wire Line
+	1350 6460 1305 6460
+Connection ~ 1350 6780
+Wire Wire Line
+	1390 6880 1390 6560
+Wire Wire Line
+	1390 6560 1305 6560
+Connection ~ 1390 6880
+Wire Wire Line
+	1390 6880 1610 6880
+Wire Wire Line
+	1305 6680 1315 6680
+Wire Wire Line
+	2045 6880 2320 6880
+Wire Wire Line
+	2320 7280 2320 7180
+Wire Wire Line
+	2045 7180 2320 7180
+$Comp
+L Homebrew:TSP-05 PS1
+U 1 1 5E543C2B
+P 3170 7080
+F 0 "PS1" H 3730 7660 50  0000 C CNN
+F 1 "TSP-05" H 3170 6690 50  0000 C CNN
+F 2 "Homebrew:TSP-05" H 3170 7080 50  0001 C CNN
+F 3 "" H 3170 7080 50  0001 C CNN
+	1    3170 7080
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4520 7430 4020 7430
+Wire Wire Line
+	4520 6920 4665 6920
+Wire Wire Line
+	4520 6920 4520 7430
+Connection ~ 4665 6920
+Wire Wire Line
+	4665 6920 4665 6700
+Wire Wire Line
+	4020 6730 4040 6730
+Wire Wire Line
+	4040 6730 4040 7225
+Wire Wire Line
+	4040 7225 4665 7225
+Wire Wire Line
+	1305 6360 1315 6360
+Wire Wire Line
+	1315 6360 1315 6680
+Wire Wire Line
+	5060 1355 5255 1355
+Wire Wire Line
+	6410 1355 6605 1355
+$Comp
+L power:+3.3V #PWR011
+U 1 1 5E2C20A0
+P 6410 1355
+F 0 "#PWR011" H 6410 1205 50  0001 C CNN
+F 1 "+3.3V" V 6425 1483 50  0000 L CNN
+F 2 "" H 6410 1355 50  0001 C CNN
+F 3 "" H 6410 1355 50  0001 C CNN
+	1    6410 1355
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR09
+U 1 1 5E2CD18F
+P 5060 1355
+F 0 "#PWR09" H 5060 1205 50  0001 C CNN
+F 1 "+5V" V 5075 1483 50  0000 L CNN
+F 2 "" H 5060 1355 50  0001 C CNN
+F 3 "" H 5060 1355 50  0001 C CNN
+	1    5060 1355
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 2060 1355
+Wire Wire Line
+	2060 1155 2010 1155
+Wire Wire Line
+	2010 1155 2010 1255
+Wire Wire Line
+	2010 1255 2060 1255
+Wire Wire Line
+	1800 1155 2010 1155
+Connection ~ 2010 1155
+$Comp
+L power:+5V #PWR08
+U 1 1 5E310E82
+P 1800 1155
+F 0 "#PWR08" H 1800 1005 50  0001 C CNN
+F 1 "+5V" H 1815 1328 50  0000 C CNN
+F 2 "" H 1800 1155 50  0001 C CNN
+F 3 "" H 1800 1155 50  0001 C CNN
+	1    1800 1155
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8955 3890 8635 3890
+Wire Wire Line
+	8955 3990 7975 3990
+Wire Wire Line
+	5655 2190 5155 2190
+Wire Wire Line
+	5655 2440 5155 2440
+Wire Wire Line
+	5655 2690 5155 2690
+Wire Wire Line
+	5655 2940 5155 2940
+Wire Wire Line
+	5655 3190 5155 3190
+Wire Wire Line
+	5655 3440 5155 3440
+Wire Wire Line
+	5655 3690 5155 3690
+Wire Wire Line
+	5655 3940 5155 3940
+Wire Wire Line
+	5655 4190 5155 4190
+Wire Wire Line
+	5655 4440 5155 4440
+Wire Wire Line
+	5155 2190 5155 2440
+Wire Wire Line
+	5155 2440 5155 2690
+Connection ~ 5155 2440
+Wire Wire Line
+	5155 2940 5155 3190
+Wire Wire Line
+	5155 3190 5155 3440
+Connection ~ 5155 3190
+Wire Wire Line
+	5155 3690 5155 3940
+Wire Wire Line
+	5155 3940 5155 4190
+Connection ~ 5155 3940
+Wire Wire Line
+	5155 4190 5155 4440
+Connection ~ 5155 4190
+Wire Wire Line
+	5500 2290 5655 2290
+Wire Wire Line
+	5500 2540 5655 2540
+Wire Wire Line
+	5500 2790 5655 2790
+Wire Wire Line
+	5500 3040 5655 3040
+Wire Wire Line
+	5500 3290 5655 3290
+Wire Wire Line
+	5500 3790 5655 3790
+Wire Wire Line
+	5500 4040 5655 4040
+Wire Wire Line
+	5500 4290 5655 4290
+Wire Wire Line
+	5500 4540 5655 4540
+Wire Wire Line
+	5500 4540 5500 4290
+Wire Wire Line
+	5500 4290 5500 4040
+Connection ~ 5500 4290
+Wire Wire Line
+	5500 4040 5500 3790
+Connection ~ 5500 4040
+Wire Wire Line
+	5500 3290 5500 3040
+Wire Wire Line
+	5500 2790 5500 2540
+Wire Wire Line
+	5500 2540 5500 2290
+Connection ~ 5500 2540
+Wire Wire Line
+	8710 2690 8710 3040
+Wire Wire Line
+	8710 4790 8710 5140
+Wire Wire Line
+	8710 5140 8710 5490
+Wire Wire Line
+	8635 5290 8635 4940
+Wire Wire Line
+	8635 4940 8635 4590
+Wire Wire Line
+	8635 2840 8635 2490
+Wire Wire Line
+	7330 3190 7330 3440
+Wire Wire Line
+	7180 4290 7180 4040
+Wire Wire Line
+	7180 2790 7180 2540
+$Comp
+L power:GND #PWR012
+U 1 1 5E50AE2A
+P 7330 5040
+F 0 "#PWR012" H 7330 4790 50  0001 C CNN
+F 1 "GND" H 7335 4867 50  0000 C CNN
+F 2 "" H 7330 5040 50  0001 C CNN
+F 3 "" H 7330 5040 50  0001 C CNN
+	1    7330 5040
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8710 5140 8955 5140
+Wire Wire Line
+	8710 5490 8955 5490
+Wire Wire Line
+	8710 4440 8955 4440
+Wire Wire Line
+	8710 4790 8955 4790
+Wire Wire Line
+	8635 2140 8955 2140
+Wire Wire Line
+	8635 2490 8955 2490
+Wire Wire Line
+	8635 2840 8955 2840
+Wire Wire Line
+	8635 3190 8955 3190
+Wire Wire Line
+	8635 3540 8955 3540
+Wire Wire Line
+	7980 2240 8955 2240
+Wire Wire Line
+	7975 2590 8955 2590
+Wire Wire Line
+	7975 2940 8955 2940
+Wire Wire Line
+	7975 3290 8955 3290
+Wire Wire Line
+	7975 4340 8955 4340
+Wire Wire Line
+	8635 4590 8955 4590
+Wire Wire Line
+	7975 4690 8955 4690
+Wire Wire Line
+	8635 4940 8955 4940
+Wire Wire Line
+	7975 5040 8955 5040
+Wire Wire Line
+	8635 5290 8955 5290
+Wire Wire Line
+	7975 5390 8955 5390
+Wire Wire Line
+	8710 2340 8955 2340
+Wire Wire Line
+	8710 2690 8955 2690
+Wire Wire Line
+	8710 3040 8955 3040
+Wire Wire Line
+	8710 3390 8955 3390
+Wire Wire Line
+	8710 3740 8955 3740
+Wire Wire Line
+	8635 3890 8635 3540
+Connection ~ 8635 4940
+Connection ~ 8710 5140
+$Comp
+L power:GND #PWR013
+U 1 1 5E5F95A6
+P 8635 5590
+F 0 "#PWR013" H 8635 5340 50  0001 C CNN
+F 1 "GND" H 8640 5417 50  0000 C CNN
+F 2 "" H 8635 5590 50  0001 C CNN
+F 3 "" H 8635 5590 50  0001 C CNN
+	1    8635 5590
+	1    0    0    -1  
+$EndComp
+Text Label 10635 2240 2    50   ~ 0
+WS28XX_11
+Text Label 10635 2590 2    50   ~ 0
+WS28XX_12
+Text Label 10635 2940 2    50   ~ 0
+WS28XX_13
+Text Label 10635 3290 2    50   ~ 0
+WS28XX_14
+Text Label 10635 3640 2    50   ~ 0
+WS28XX_15
+Text Label 10635 3990 2    50   ~ 0
+WS28XX_16
+Text Label 10635 4340 2    50   ~ 0
+WS28XX_17
+Text Label 10635 4690 2    50   ~ 0
+WS28XX_18
+Text Label 10635 5040 2    50   ~ 0
+WS28XX_19
+Wire Wire Line
+	9900 2690 9900 3040
+Wire Wire Line
+	9975 4590 9975 4940
+Wire Wire Line
+	9900 4790 9900 5140
+$Comp
+L power:GND #PWR014
+U 1 1 5E8D4623
+P 9975 5590
+F 0 "#PWR014" H 9975 5340 50  0001 C CNN
+F 1 "GND" H 9980 5417 50  0000 C CNN
+F 2 "" H 9975 5590 50  0001 C CNN
+F 3 "" H 9975 5590 50  0001 C CNN
+	1    9975 5590
+	1    0    0    -1  
+$EndComp
+Text Label 4045 2455 2    50   ~ 0
+WS28XX_13
+Wire Wire Line
+	4045 2455 3460 2455
+Text Label 4045 2655 2    50   ~ 0
+WS28XX_14
+Wire Wire Line
+	4045 2655 3460 2655
+Text Label 4045 2855 2    50   ~ 0
+WS28XX_15
+Wire Wire Line
+	4045 2855 3460 2855
+Text Label 4045 2155 2    50   ~ 0
+WS28XX_17
+Wire Wire Line
+	4045 2155 3460 2155
+Text Label 4045 2355 2    50   ~ 0
+WS28XX_18
+Wire Wire Line
+	4045 2355 3460 2355
+Text Label 4045 2555 2    50   ~ 0
+WS28XX_19
+Wire Wire Line
+	4045 2555 3460 2555
+Text Label 4045 2755 2    50   ~ 0
+WS28XX_20
+Wire Wire Line
+	4045 2755 3460 2755
+NoConn ~ 3460 3055
+NoConn ~ 3460 3255
+NoConn ~ 3460 3455
+NoConn ~ 3460 3655
+NoConn ~ 3460 3855
+NoConn ~ 3460 4055
+NoConn ~ 3460 4255
+Wire Wire Line
+	5880 6510 6710 6510
+$Comp
+L Connector_Generic:Conn_01x02 J5
+U 1 1 5EC219BC
+P 5680 6020
+F 0 "J5" H 5600 5695 50  0000 C CNN
+F 1 "5V - WS28XX" H 5600 5786 50  0000 C CNN
+F 2 "digikey-footprints:PinHeader_1x2_P3.96mm_Drill1.6mm" H 5680 6020 50  0001 C CNN
+F 3 "~" H 5680 6020 50  0001 C CNN
+	1    5680 6020
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR015
+U 1 1 5EC219C3
+P 5880 6020
+F 0 "#PWR015" H 5880 5770 50  0001 C CNN
+F 1 "GND" H 5885 5847 50  0000 C CNN
+F 2 "" H 5880 6020 50  0001 C CNN
+F 3 "" H 5880 6020 50  0001 C CNN
+	1    5880 6020
+	1    0    0    -1  
+$EndComp
+Text Label 6710 5920 2    50   ~ 0
+VCC_WS28XX_1_1
+Wire Wire Line
+	5880 5920 6710 5920
+$Comp
+L Connector_Generic:Conn_01x02 J8
+U 1 1 5E2D3B2C
+P 6975 6230
+F 0 "J8" H 6895 5905 50  0000 C CNN
+F 1 "5V - WS28XX" H 6895 5996 50  0000 C CNN
+F 2 "digikey-footprints:PinHeader_1x2_P3.96mm_Drill1.6mm" H 6975 6230 50  0001 C CNN
+F 3 "~" H 6975 6230 50  0001 C CNN
+	1    6975 6230
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR017
+U 1 1 5E2D3B33
+P 7175 6230
+F 0 "#PWR017" H 7175 5980 50  0001 C CNN
+F 1 "GND" H 7180 6057 50  0000 C CNN
+F 2 "" H 7175 6230 50  0001 C CNN
+F 3 "" H 7175 6230 50  0001 C CNN
+	1    7175 6230
+	1    0    0    -1  
+$EndComp
+Text Label 8005 6130 2    50   ~ 0
+VCC_WS28XX_2_1
+Wire Wire Line
+	7175 6130 8005 6130
+$Comp
+L Connector_Generic:Conn_01x02 J9
+U 1 1 5E2E4C2C
+P 8135 6230
+F 0 "J9" H 8055 5905 50  0000 C CNN
+F 1 "5V - WS28XX" H 8055 5996 50  0000 C CNN
+F 2 "digikey-footprints:PinHeader_1x2_P3.96mm_Drill1.6mm" H 8135 6230 50  0001 C CNN
+F 3 "~" H 8135 6230 50  0001 C CNN
+	1    8135 6230
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR018
+U 1 1 5E2E4C33
+P 8335 6230
+F 0 "#PWR018" H 8335 5980 50  0001 C CNN
+F 1 "GND" H 8340 6057 50  0000 C CNN
+F 2 "" H 8335 6230 50  0001 C CNN
+F 3 "" H 8335 6230 50  0001 C CNN
+	1    8335 6230
+	1    0    0    -1  
+$EndComp
+Text Label 9165 6130 2    50   ~ 0
+VCC_WS28XX_2_2
+Wire Wire Line
+	8335 6130 9165 6130
+$Comp
+L power:GND #PWR010
+U 1 1 5E31A888
+P 5155 5040
+F 0 "#PWR010" H 5155 4790 50  0001 C CNN
+F 1 "GND" H 5160 4867 50  0000 C CNN
+F 2 "" H 5155 5040 50  0001 C CNN
+F 3 "" H 5155 5040 50  0001 C CNN
+	1    5155 5040
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4765 2290 5500 2290
+Wire Wire Line
+	9975 4590 9975 4240
+Connection ~ 9975 4590
+Wire Wire Line
+	9975 2490 9975 2140
+Wire Wire Line
+	8635 4590 8635 4240
+Connection ~ 8635 4590
+Wire Wire Line
+	8635 2490 8635 2140
+Connection ~ 8635 2490
+Wire Wire Line
+	8635 3540 8635 3190
+Connection ~ 8635 3540
+Wire Wire Line
+	7330 3190 7330 2940
+Connection ~ 7330 3190
+Wire Wire Line
+	7330 3940 7330 3690
+Wire Wire Line
+	8955 3640 7975 3640
+Wire Wire Line
+	7330 2190 7330 2440
+Connection ~ 7330 2440
+Wire Wire Line
+	7330 2440 7330 2690
+Wire Wire Line
+	9975 3190 9975 3540
+Wire Wire Line
+	8635 4240 8955 4240
+Wire Wire Line
+	9975 3540 9975 3890
+Connection ~ 9975 3540
+Wire Wire Line
+	9975 2490 9975 2840
+Connection ~ 9975 2490
+Wire Wire Line
+	7330 3940 7330 4190
+Connection ~ 7330 3940
+Connection ~ 5500 2290
+Wire Wire Line
+	7055 2690 7330 2690
+Wire Wire Line
+	7055 2940 7330 2940
+Wire Wire Line
+	7055 3190 7330 3190
+Wire Wire Line
+	7055 3440 7330 3440
+Wire Wire Line
+	7055 3690 7330 3690
+Wire Wire Line
+	7055 3940 7330 3940
+Wire Wire Line
+	7055 2290 7180 2290
+Wire Wire Line
+	7055 2540 7180 2540
+Wire Wire Line
+	7055 2790 7180 2790
+Wire Wire Line
+	7055 3290 7180 3290
+Wire Wire Line
+	7055 3790 7180 3790
+Wire Wire Line
+	7055 4040 7180 4040
+Wire Wire Line
+	7055 4290 7180 4290
+Wire Wire Line
+	9655 2690 9900 2690
+Wire Wire Line
+	9655 3040 9900 3040
+Wire Wire Line
+	9655 3390 9900 3390
+Wire Wire Line
+	9655 3740 9900 3740
+Wire Wire Line
+	9655 4440 9900 4440
+Wire Wire Line
+	9655 4790 9900 4790
+Wire Wire Line
+	9655 5140 9900 5140
+Wire Wire Line
+	9655 2490 9975 2490
+Wire Wire Line
+	9655 3190 9975 3190
+Wire Wire Line
+	9655 4590 9975 4590
+Wire Wire Line
+	9655 4940 9975 4940
+Wire Wire Line
+	9655 2240 10635 2240
+Wire Wire Line
+	9655 2590 10635 2590
+Wire Wire Line
+	9655 2940 10635 2940
+Wire Wire Line
+	9655 3290 10635 3290
+Wire Wire Line
+	9655 3640 10635 3640
+Wire Wire Line
+	9655 3990 10635 3990
+Wire Wire Line
+	9655 4340 10635 4340
+Wire Wire Line
+	9655 4690 10635 4690
+Wire Wire Line
+	9655 5040 10635 5040
+Wire Wire Line
+	9655 2340 9900 2340
+Wire Wire Line
+	7055 3040 7180 3040
+Wire Wire Line
+	7055 2440 7330 2440
+Wire Wire Line
+	9655 3540 9975 3540
+Wire Wire Line
+	9655 3890 9975 3890
+Wire Wire Line
+	9655 4240 9975 4240
+Wire Wire Line
+	9655 2840 9975 2840
+Wire Wire Line
+	7055 2190 7330 2190
+Wire Wire Line
+	7055 4190 7330 4190
+Wire Wire Line
+	9655 2140 9975 2140
+Wire Wire Line
+	5155 4440 5155 5040
+Connection ~ 5155 4440
+Wire Wire Line
+	5155 2690 5155 2940
+Connection ~ 5155 2690
+Connection ~ 5155 2940
+Wire Wire Line
+	5155 3440 5155 3690
+Connection ~ 5155 3440
+Connection ~ 5155 3690
+Wire Wire Line
+	7330 4190 7330 4440
+Connection ~ 7330 4190
+Wire Wire Line
+	7330 2690 7330 2940
+Connection ~ 7330 2690
+Connection ~ 7330 2940
+Wire Wire Line
+	7330 3440 7330 3690
+Connection ~ 7330 3440
+Connection ~ 7330 3690
+Wire Wire Line
+	7180 2290 7915 2290
+Wire Wire Line
+	7180 2540 7180 2290
+Connection ~ 7180 2540
+Connection ~ 7180 2290
+Wire Wire Line
+	7180 3290 7180 3040
+Wire Wire Line
+	7180 4040 7180 3790
+Connection ~ 7180 4040
+Text Label 4765 2290 0    50   ~ 0
+VCC_WS28XX_1_1
+Text Label 4765 3540 0    50   ~ 0
+VCC_WS28XX_1_2
+Text Label 7915 2290 2    50   ~ 0
+VCC_WS28XX_2_1
+Text Label 7920 3540 2    50   ~ 0
+VCC_WS28XX_2_2
+Wire Wire Line
+	9975 4940 9975 5290
+Connection ~ 9975 4940
+Wire Wire Line
+	8635 5290 8635 5590
+Connection ~ 8635 5290
+Wire Wire Line
+	8635 4240 8635 3890
+Connection ~ 8635 4240
+Connection ~ 8635 3890
+Wire Wire Line
+	8635 2840 8635 3190
+Connection ~ 8635 2840
+Connection ~ 8635 3190
+Wire Wire Line
+	9975 2840 9975 3190
+Connection ~ 9975 2840
+Connection ~ 9975 3190
+Wire Wire Line
+	9975 3890 9975 4240
+Connection ~ 9975 3890
+Connection ~ 9975 4240
+Wire Wire Line
+	7975 2340 8710 2340
+Wire Wire Line
+	8710 2690 8710 2340
+Connection ~ 8710 2690
+Connection ~ 8710 2340
+Wire Wire Line
+	8710 3740 8710 3390
+Wire Wire Line
+	8710 4790 8710 4440
+Connection ~ 8710 4790
+Wire Wire Line
+	9900 2340 10635 2340
+Wire Wire Line
+	9900 2690 9900 2340
+Connection ~ 9900 2690
+Connection ~ 9900 2340
+Wire Wire Line
+	9900 3740 9900 3390
+Wire Wire Line
+	9900 4790 9900 4440
+Connection ~ 9900 4790
+Text Label 7975 2340 0    50   ~ 0
+VCC_WS28XX_1_1
+Text Label 7975 4090 0    50   ~ 0
+VCC_WS28XX_1_2
+Text Label 10635 2340 2    50   ~ 0
+VCC_WS28XX_2_1
+Text Label 10635 4090 2    50   ~ 0
+VCC_WS28XX_2_2
+Text Label 4045 1955 2    50   ~ 0
+WS28XX_16
+Wire Wire Line
+	4045 1955 3460 1955
+$Comp
+L Homebrew:Stackfire-Ring J11
+U 1 1 5E35999A
+P 9305 2490
+F 0 "J11" H 7436 3065 50  0000 C CNN
+F 1 "Stackfire-Ring" H 7436 2974 50  0000 C CNN
+F 2 "Homebrew:Stackfire-Ring" H 9305 2490 50  0001 C CNN
+F 3 "" H 9305 2490 50  0001 C CNN
+	1    9305 2490
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9655 5290 9975 5290
+Connection ~ 9975 5290
+Wire Wire Line
+	9975 5290 9975 5590
+Wire Wire Line
+	9655 5390 10650 5390
+Wire Wire Line
+	9655 5490 9900 5490
+Wire Wire Line
+	9900 5490 9900 5140
+Connection ~ 9900 5140
+Text Label 10650 5390 2    50   ~ 0
+WS28XX_20
+Wire Wire Line
+	7055 4440 7330 4440
+Connection ~ 7330 4440
+Wire Wire Line
+	7330 4440 7330 5040
+Connection ~ 7180 4290
+Wire Wire Line
+	7055 4540 7180 4540
+Wire Wire Line
+	7180 4290 7180 4540
+$Comp
+L Connector_Generic:Conn_01x03 J12
+U 1 1 5E32846C
+P 1105 6140
+F 0 "J12" V 1195 6020 50  0000 C CNN
+F 1 "230V (OUT 2)" V 1360 6075 50  0000 C CNN
+F 2 "TerminalBlock_WAGO:TerminalBlock_WAGO_236-103_1x03_P5.00mm_45Degree" H 1105 6140 50  0001 C CNN
+F 3 "~" H 1105 6140 50  0001 C CNN
+	1    1105 6140
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1315 6360 1315 6040
+Wire Wire Line
+	1315 6040 1305 6040
+Connection ~ 1315 6360
+Wire Wire Line
+	1350 6460 1350 6140
+Wire Wire Line
+	1350 6140 1305 6140
+Connection ~ 1350 6460
+Wire Wire Line
+	1390 6560 1390 6240
+Wire Wire Line
+	1390 6240 1305 6240
+Connection ~ 1390 6560
+Wire Wire Line
+	4765 3540 5500 3540
+Wire Wire Line
+	5500 2790 5500 3040
+Connection ~ 5500 2790
+Connection ~ 5500 3040
+Wire Wire Line
+	5500 3790 5500 3540
+Connection ~ 5500 3790
+Connection ~ 5500 3540
+Wire Wire Line
+	5500 3540 5655 3540
+Wire Wire Line
+	7055 3540 7180 3540
+Wire Wire Line
+	7180 3040 7180 2790
+Connection ~ 7180 3040
+Connection ~ 7180 2790
+Wire Wire Line
+	7180 3790 7180 3540
+Connection ~ 7180 3790
+Connection ~ 7180 3540
+Wire Wire Line
+	7180 3540 7920 3540
+Wire Wire Line
+	8710 3040 8710 3390
+Connection ~ 8710 3040
+Connection ~ 8710 3390
+Wire Wire Line
+	7975 4090 8710 4090
+Wire Wire Line
+	8710 4440 8710 4090
+Connection ~ 8710 4440
+Connection ~ 8710 4090
+Wire Wire Line
+	8710 4090 8955 4090
+Wire Wire Line
+	9655 4090 9900 4090
+Wire Wire Line
+	9900 3040 9900 3390
+Connection ~ 9900 3040
+Connection ~ 9900 3390
+Wire Wire Line
+	9900 4440 9900 4090
+Connection ~ 9900 4440
+Connection ~ 9900 4090
+Wire Wire Line
+	9900 4090 10635 4090
+$EndSCHEMATC
