@@ -11,17 +11,17 @@
 #define USE MEGA
 
 
-#ifdef USE_BATTERY
-  #define USE_WOR
-  #define BAT_CRITICAL 15
-  #define BATTSENS BattSensor<AsyncMeter<InternalVCC>>
-  #define MODEL_1 0xFA
-  #define MODEL_2 0xB6
-#else
+//#ifdef USE_BATTERY
+//  #define USE_WOR
+//  #define BAT_CRITICAL 15
+//  #define BATTSENS BattSensor<AsyncMeter<InternalVCC>>
+//  #define MODEL_1 0xFA
+//  #define MODEL_2 0xB6
+//#else
   #define BATTSENS NoBattery
   #define MODEL_1 0xFA
   #define MODEL_2 0xB5
-#endif
+//#endif
 
 
 #define EI_NOTEXTERNAL
