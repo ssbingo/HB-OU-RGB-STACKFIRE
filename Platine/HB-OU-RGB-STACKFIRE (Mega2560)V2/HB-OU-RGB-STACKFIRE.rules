@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 2057)
+    (start_pass_no 2985)
     (layer_rule F.Cu
       (active on)
       (preferred_direction vertical)
@@ -132,17 +132,17 @@
     )
   )
   (class "kicad_default"
-    +3V3 GND "Net-(U2-Pad6)" /D2 "/WS28XX_1" "Net-(B1-PadAREF)" "Net-(B1-PadA15)" "Net-(B1-PadA13)"
-    "Net-(B1-PadA11)" "Net-(B1-PadA9)" "Net-(B1-PadA7)" "Net-(B1-PadA5)" "Net-(B1-PadA3)" "Net-(B1-PadA1)" "Net-(B1-PadA14)" "Net-(B1-PadA12)"
-    "Net-(B1-PadA10)" "Net-(B1-PadA8)" "Net-(B1-PadA6)" "Net-(B1-PadA4)" "Net-(B1-PadA2)" "Net-(B1-PadA0)" "/HV4(SS)" "/HV3(SCK)"
-    "/HV2(MOSI)" "/HV1(MISO)" "/LV1(MISO)" "/LV2(MOSI)" "/LV3(SCK)" "/LV4(SS)" "Net-(B1-Pad4)" "Net-(B1-Pad8)"
-    "Net-(B1-PadRESE)" "Net-(B1-Pad1)" "Net-(B1-Pad5V@2)" "Net-(B1-Pad0)" "Net-(B1-Pad6)" "Net-(B1-Pad10)" "Net-(B1-Pad12)" "Net-(B1-Pad14)"
-    "Net-(B1-Pad16)" "Net-(B1-Pad18)" "Net-(B1-Pad20)" "Net-(B1-Pad48)" "Net-(B1-Pad49)" "Net-(B1-Pad47)" "Net-(B1-Pad39)" "Net-(B1-Pad37)"
-    "Net-(B1-Pad35)" "Net-(B1-Pad33)" "Net-(B1-Pad46)" "Net-(B1-Pad38)" "Net-(B1-Pad36)" "Net-(B1-Pad34)" "Net-(B1-Pad32)" "Net-(B1-Pad40)"
-    "Net-(B1-Pad41)" "Net-(B1-Pad42)" "Net-(B1-Pad43)" "Net-(B1-Pad44)" "Net-(B1-Pad45)" "/WS28XX_2" "/WS28XX_3" "/WS28XX_4"
-    "/WS28XX_6" "/WS28XX_7" "/WS28XX_8" "/WS28XX_9" "/WS28XX_10" "/WS28XX_11" "/WS28XX_12" "Net-(D1-Pad2)"
-    "/WS28XX_13" "/WS28XX_14" "/WS28XX_15" "/WS28XX_16" "/WS28XX_17" "/WS28XX_18" "/WS28XX_19" "/WS28XX_5"
-    "/WS28XX_20"
+    +3V3 GND "Net-(U2-Pad6)" "/WS28XX_1" "Net-(B1-PadAREF)" "Net-(B1-PadA15)" "Net-(B1-PadA13)" "Net-(B1-PadA11)"
+    "Net-(B1-PadA9)" "Net-(B1-PadA7)" "Net-(B1-PadA5)" "Net-(B1-PadA3)" "Net-(B1-PadA1)" "Net-(B1-PadA14)" "Net-(B1-PadA12)" "Net-(B1-PadA10)"
+    "Net-(B1-PadA8)" "Net-(B1-PadA6)" "Net-(B1-PadA4)" "Net-(B1-PadA2)" "Net-(B1-PadA0)" "/HV4(SS)" "/HV3(SCK)" "/HV2(MOSI)"
+    "/HV1(MISO)" "/LV1(MISO)" "/LV2(MOSI)" "/LV3(SCK)" "/LV4(SS)" "Net-(B1-Pad4)" "Net-(B1-Pad8)" "Net-(B1-PadRESE)"
+    "Net-(B1-Pad1)" "Net-(B1-Pad0)" "Net-(B1-Pad6)" "Net-(B1-Pad10)" "Net-(B1-Pad12)" "Net-(B1-Pad14)" "Net-(B1-Pad16)" "Net-(B1-Pad18)"
+    "Net-(B1-Pad48)" "Net-(B1-Pad49)" "Net-(B1-Pad47)" "Net-(B1-Pad39)" "Net-(B1-Pad37)" "Net-(B1-Pad35)" "Net-(B1-Pad33)" "Net-(B1-Pad46)"
+    "Net-(B1-Pad38)" "Net-(B1-Pad36)" "Net-(B1-Pad34)" "Net-(B1-Pad32)" "Net-(B1-Pad40)" "Net-(B1-Pad41)" "Net-(B1-Pad42)" "Net-(B1-Pad43)"
+    "Net-(B1-Pad44)" "Net-(B1-Pad45)" "/WS28XX_2" "/WS28XX_3" "/WS28XX_4" "/WS28XX_6" "/WS28XX_7" "/WS28XX_8"
+    "/WS28XX_9" "/WS28XX_10" "/WS28XX_11" "/WS28XX_12" "Net-(D1-Pad2)" "/WS28XX_13" "/WS28XX_14" "/WS28XX_15"
+    "/WS28XX_16" "/WS28XX_17" "/WS28XX_18" "/WS28XX_19" "/WS28XX_5" "/WS28XX_20" "/HV5(D2)" "/LV5(D2)"
+    "Net-(B1-Pad13)" "Net-(U1-Pad6)" "Net-(U2-Pad8)" "Net-(U2-Pad4)" "Net-(U2-Pad14)" "Net-(U2-Pad16)" "Net-(U2-Pad18)"
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule

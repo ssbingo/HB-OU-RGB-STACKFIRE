@@ -1,7 +1,8 @@
+//- -----------------------------------------------------------------------------------------------------------------------
 // AskSin++
 // 2017-03-29 papa Creative Commons - http://creativecommons.org/licenses/by-nc-sa/3.0/de/
 // 2018-08-03 jp112sdl Creative Commons - http://creativecommons.org/licenses/by-nc-sa/3.0/de/
-//------------------------------------------------------------------------------------------------------------------------
+//- -----------------------------------------------------------------------------------------------------------------------
 
 #ifndef __RGBLEDXX_H__
 #define __RGBLEDXX_H__
@@ -27,7 +28,12 @@
 #define LOGIC_INVERSMINUS 15
 #define LOGIC_INVERSMUL 16
 
-#ifdef USE MEGA
+#ifdef ENABLE_RGBW
+CRGBW leds10[WSNUM_LEDS10];
+CRGBW leds11[WSNUM_LEDS11];
+CRGB *ledsRGB10 = (CRGB *) &leds10[0];
+CRGB *ledsRGB11 = (CRGB *) &leds11[0];
+#else
   CRGB leds10[WSNUM_LEDS10];
   CRGB leds11[WSNUM_LEDS11];
   CRGB leds12[WSNUM_LEDS12];
@@ -37,24 +43,24 @@
   CRGB leds16[WSNUM_LEDS16];
   CRGB leds17[WSNUM_LEDS17];
   CRGB leds18[WSNUM_LEDS18];
-  CRGB leds19[WSNUM_LEDS19];    
+  CRGB leds19[WSNUM_LEDS19];  
 
+#ifdef doubleLED
   CRGB leds20[WSNUM_LEDS20];   
   CRGB leds21[WSNUM_LEDS21]; 
   CRGB leds22[WSNUM_LEDS22];
   CRGB leds23[WSNUM_LEDS23];
-  CRGB leds24[WSNUM_LEDS24];
+  CRGB leds24[WSNUM_LEDS24];  
   CRGB leds25[WSNUM_LEDS25];
   CRGB leds26[WSNUM_LEDS26];
   CRGB leds27[WSNUM_LEDS27];
   CRGB leds28[WSNUM_LEDS28];
   CRGB leds29[WSNUM_LEDS29];  
-#else
-  CRGB leds1[WSNUM_LEDS1];
-  CRGB leds2[WSNUM_LEDS2];
-  CRGB leds3[WSNUM_LEDS3];
+#endif
+  
 #endif
 
+#include "RGBPrograms.h"
 #include "RGBProgramsFire.h"
 
 namespace as {
@@ -355,10 +361,9 @@ class DimmerStateMachine {
     bool       toggledimup : 1;
     uint8_t    level, lastonlevel;
     RampAlarm  alarm;
-    bool       lowbat;
 
   public:
-    DimmerStateMachine() : state(AS_CM_JT_NONE), changed(false), toggledimup(true), level(0), lastonlevel(200), alarm(*this), lowbat(false) {}
+    DimmerStateMachine() : state(AS_CM_JT_NONE), changed(false), toggledimup(true), level(0), lastonlevel(200), alarm(*this) {}
     virtual ~DimmerStateMachine () {}
 
     virtual void switchState(__attribute__ ((unused)) uint8_t oldstate, uint8_t newstate) {
@@ -544,13 +549,11 @@ class DimmerStateMachine {
 
     void setLevel (uint8_t level, uint16_t ramp, uint16_t delay) {
       DPRINT("SetLevel: "); DHEX(level); DPRINT(" "); DHEX(ramp); DPRINT(" "); DHEXLN(delay);
-               
       if ( ramp == 0 ) {
         alarm.destlevel = level;
         updateLevel(level);
-        setState(level == 0 ? AS_CM_JT_OFF : AS_CM_JT_ON, AskSinBase::intTimeCvt(delay));      
-        FastLED.setBrightness(level);
-
+        setState(level == 0 ? AS_CM_JT_OFF : AS_CM_JT_ON, AskSinBase::intTimeCvt(delay));
+        FastLED.setBrightness(  level );
       }
       else {
         sysclock.cancel(alarm);
@@ -563,14 +566,6 @@ class DimmerStateMachine {
       return level;
     }
 
-    void lowBat(bool l) {
-      lowbat = l;
-    }
-
-    bool lowBat() {
-      return lowbat;
-    }
-
     uint8_t flags () const {
       uint8_t f = delayActive() ? 0x40 : 0x00;
       if ( alarm.destlevel < level) {
@@ -579,11 +574,6 @@ class DimmerStateMachine {
       else if ( alarm.destlevel > level) {
         f |= AS_CM_EXTSTATE_UP;
       }
-
-      if (lowbat == true) {
-        f |= 0x80;
-      }
-
       return f;
     }
 };
@@ -617,8 +607,6 @@ class RGBLEDChannel : public Channel<HalType, DimmerList1, DimmerList3, EmptyLis
       DimmerStateMachine::changed = c;
     }
 
-
-
     void patchStatus (Message& msg) {
       switch (this->number()) {
         case 1:
@@ -650,7 +638,6 @@ class RGBLEDChannel : public Channel<HalType, DimmerList1, DimmerList3, EmptyLis
       DPRINT("msg.value = "); DDECLN(msg.value());
       DPRINT("msg.ramp = "); DDECLN(msg.ramp());
       DPRINT("msg.delay= "); DDECLN(msg.delay());
-
       switch (this->number()) {
         case 1:
           brightness = msg.value();
@@ -683,14 +670,14 @@ class RGBLEDChannel : public Channel<HalType, DimmerList1, DimmerList3, EmptyLis
           lastmsgcnt = cnt;
           remote(pl, cnt);
         }
-        return true;     
+        return true;
       }
       return false;
     }
 
     void setColor(uint8_t val) {       
 
-#ifdef USE MEGA      
+    
       for (int i = 0; i < WSNUM_LEDS10; i++) {
         leds10[i] = CHSV((val * 1275L) / 1000, (val <  200) ? 255 : 0, 255);
       }
@@ -722,6 +709,7 @@ class RGBLEDChannel : public Channel<HalType, DimmerList1, DimmerList3, EmptyLis
         leds19[i] = CHSV((val * 1275L) / 1000, (val <  200) ? 255 : 0, 255);
       }  
 
+#ifdef doubleLED
       for (int i = 0; i < WSNUM_LEDS20; i++) {
         leds20[i] = CHSV((val * 1275L) / 1000, (val <  200) ? 255 : 0, 255);
       }
@@ -737,6 +725,7 @@ class RGBLEDChannel : public Channel<HalType, DimmerList1, DimmerList3, EmptyLis
       for (int i = 0; i < WSNUM_LEDS24; i++) {
         leds24[i] = CHSV((val * 1275L) / 1000, (val <  200) ? 255 : 0, 255);
       } 
+
       for (int i = 0; i < WSNUM_LEDS25; i++) {
         leds25[i] = CHSV((val * 1275L) / 1000, (val <  200) ? 255 : 0, 255);
       } 
@@ -751,18 +740,9 @@ class RGBLEDChannel : public Channel<HalType, DimmerList1, DimmerList3, EmptyLis
       }    
       for (int i = 0; i < WSNUM_LEDS29; i++) {
         leds29[i] = CHSV((val * 1275L) / 1000, (val <  200) ? 255 : 0, 255);
-      }                            
-#else
-      for (int i = 0; i < WSNUM_LEDS1; i++) {
-        leds1[i] = CHSV((val * 1275L) / 1000, (val <  200) ? 255 : 0, 255);
-      }
-      for (int i = 0; i < WSNUM_LEDS2; i++) {
-        leds2[i] = CHSV((val * 1275L) / 1000, (val <  200) ? 255 : 0, 255);
-      } 
-      for (int i = 0; i < WSNUM_LEDS3; i++) {
-        leds3[i] = CHSV((val * 1275L) / 1000, (val <  200) ? 255 : 0, 255);
-      }  
-#endif          
+      }    
+#endif
+      
     }
 
     void runProgram(uint8_t val) {
@@ -771,26 +751,25 @@ class RGBLEDChannel : public Channel<HalType, DimmerList1, DimmerList3, EmptyLis
           setColor(currentColor);
           break;
         case 1:
-          RGBProgramFire1(brightness,1);
+          RGBProgramRainbow(SLOW_PROGRAM_TIMER, brightness);
           break;
         case 2:
-          RGBProgramFire1(brightness,2);
+          RGBProgramRainbow(NORMAL_PROGRAM_TIMER, brightness);
           break;
         case 3:
-          RGBProgramFire1(brightness,3);
+          RGBProgramRainbow(FAST_PROGRAM_TIMER, brightness);
           break;
         case 4:
-          RGBProgramFire1(brightness, 4);
+          RGBProgramFire1(brightness,4);
           break;
         case 5:
-          RGBProgramFire1(brightness, 5);
+          RGBProgramFire1(brightness,5);
           break;
         case 6:
-          RGBProgramFire1(brightness, 6);
+          RGBProgramFire1(brightness,6);
           break;
       }
     }
-
 
     bool process (const SensorEventMsg & msg) {
       bool lg = msg.isLong();
@@ -821,7 +800,6 @@ class RGBLEDDevice : public MultiChannelDevice<HalType, ChannelType, ChannelCoun
     virtual ~RGBLEDDevice () {}
 
     void firstinit () {
-  
       DeviceType::firstinit();
       DeviceType::channel(1).getList1().logicCombination(LOGIC_OR);
       for ( uint8_t i = 2; i <= DeviceType::channels(); ++i ) {
@@ -832,7 +810,6 @@ class RGBLEDDevice : public MultiChannelDevice<HalType, ChannelType, ChannelCoun
     virtual void configChanged () {
       DeviceType::configChanged();
       DPRINTLN("* Config Changed       : List0");
-#ifdef USE MEGA
       for (int i = 0; i < WSNUM_LEDS10; i++) {
         leds10[i] = CRGB::Black;
       }
@@ -864,6 +841,7 @@ class RGBLEDDevice : public MultiChannelDevice<HalType, ChannelType, ChannelCoun
         leds19[i] = CRGB::Black;
       }   
 
+#ifdef doubleLED
       for (int i = 0; i < WSNUM_LEDS20; i++) {
         leds20[i] = CRGB::Black;
       }
@@ -894,22 +872,19 @@ class RGBLEDDevice : public MultiChannelDevice<HalType, ChannelType, ChannelCoun
       for (int i = 0; i < WSNUM_LEDS29; i++) {
         leds29[i] = CRGB::Black;
       }      
-#else
-      for (int i = 0; i < WSNUM_LEDS1; i++) {
-        leds1[i] = CRGB::Black;
-      }
-      for (int i = 0; i < WSNUM_LEDS2; i++) {
-        leds2[i] = CRGB::Black;
-      }
-      for (int i = 0; i < WSNUM_LEDS3; i++) {
-        leds3[i] = CRGB::Black;
-      }
 #endif
+
       FastLED.show();
 
-      FastLED.delay (1000 / FRAMES_PER_SECOND);
+#ifdef PWM_ENABLED
+      static AnalogPWMController<PWM_RED_PIN, PWM_GREEN_PIN, PWM_BLUE_PIN, PWM_WHITE_PIN, PWM_WHITE_ONLY> controler;
+      FastLED.addLeds(&controler, leds10, 1);
+#else
+#ifdef ENABLE_RGBW
+      FastLED.addLeds<WSLED_TYPE, WSLED_PIN_10, RGB>(ledsRGB10, getRGBWsize(WSNUM_LEDS10));
+      FastLED.addLeds<WSLED_TYPE, WSLED_PIN_11, RGB>(ledsRGB11, getRGBWsize(WSNUM_LEDS11));
+#else
 
-#ifdef USE MEGA
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_10, WSCOLOR_ORDER>(leds10, WSNUM_LEDS10);
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_11, WSCOLOR_ORDER>(leds11, WSNUM_LEDS11);
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_12, WSCOLOR_ORDER>(leds12, WSNUM_LEDS12);
@@ -921,6 +896,7 @@ class RGBLEDDevice : public MultiChannelDevice<HalType, ChannelType, ChannelCoun
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_18, WSCOLOR_ORDER>(leds18, WSNUM_LEDS18);
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_19, WSCOLOR_ORDER>(leds19, WSNUM_LEDS19);   
 
+#ifdef doubleLED
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_20, WSCOLOR_ORDER>(leds20, WSNUM_LEDS20);
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_21, WSCOLOR_ORDER>(leds21, WSNUM_LEDS21);
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_22, WSCOLOR_ORDER>(leds22, WSNUM_LEDS22);
@@ -930,31 +906,20 @@ class RGBLEDDevice : public MultiChannelDevice<HalType, ChannelType, ChannelCoun
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_26, WSCOLOR_ORDER>(leds26, WSNUM_LEDS26);
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_27, WSCOLOR_ORDER>(leds27, WSNUM_LEDS27);
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_28, WSCOLOR_ORDER>(leds28, WSNUM_LEDS28);  
-      FastLED.addLeds<WSLED_TYPE, WSLED_PIN_29, WSCOLOR_ORDER>(leds29, WSNUM_LEDS29);           
-#else
-      FastLED.addLeds<WSLED_TYPE, WSLED_PIN_1, WSCOLOR_ORDER>(leds1, WSNUM_LEDS1);
-      FastLED.addLeds<WSLED_TYPE, WSLED_PIN_2, WSCOLOR_ORDER>(leds2, WSNUM_LEDS2);
-      FastLED.addLeds<WSLED_TYPE, WSLED_PIN_3, WSCOLOR_ORDER>(leds3, WSNUM_LEDS3);
+      FastLED.addLeds<WSLED_TYPE, WSLED_PIN_29, WSCOLOR_ORDER>(leds29, WSNUM_LEDS29);       
+#endif      
 #endif
-      
+#endif
+
       DeviceType::channel(2).setColor(0);
     }
 
-    uint8_t getCurrentProgram() {
-      return currentProgram;
-    }
-
-    uint8_t getCurrentLevel() {
-      return DeviceType::channel(1).status();
-    }
-
-    void handleLED() {
+    bool handleLED() {
       DeviceType::channel(3).runProgram(currentProgram);
       FastLED.show();
     }
 
     void init (HalType& hal) {
-      
       DeviceType::init(hal);
       //if ( DeviceType::channel(1).getList1().powerUpAction() == true ) {
       //  DeviceType::channel(1).setLevel(200, 5, 0xffff);
@@ -963,9 +928,86 @@ class RGBLEDDevice : public MultiChannelDevice<HalType, ChannelType, ChannelCoun
       DeviceType::channel(1).setLevel(0, 0, 0xffff);
       DeviceType::channel(2).setLevel(0, 0, 0xffff);
       DeviceType::channel(3).setLevel(0, 0, 0xffff);
-      
       // }
     }
+
+    uint16_t combineChannels () {
+      uint16_t value = 0;
+      for ( uint8_t i = 1; i < DeviceType::channels(); ++i ) {
+        uint8_t level = DeviceType::channel(i).status();
+        switch ( DeviceType::channel(i).getList1().logicCombination() ) {
+          default:
+          case LOGIC_INACTIVE:
+            break;
+          case LOGIC_OR:
+            value = value > level ? value : level;
+            break;
+          case LOGIC_AND:
+            value = value < level ? value : level;
+            break;
+          case LOGIC_XOR:
+            value = value == 0 ? level : (level == 0 ? value : 0);
+            break;
+          case LOGIC_NOR:
+            value = 200 - (value > level ? value : level);
+            break;
+          case LOGIC_NAND:
+            value = 200 - (value < level ? value : level);
+            break;
+          case LOGIC_ORINVERS:
+            level = 200 - level;
+            value = value > level ? value : level;
+            break;
+          case LOGIC_ANDINVERS:
+            level = 200 - level;
+            value = value < level ? value : level;
+            break;
+          case LOGIC_PLUS:
+            value += level;
+            if ( value > 200 ) value = 200;
+            break;
+          case LOGIC_MINUS:
+            if ( level > value ) value = 0;
+            else value -= level;
+            break;
+          case LOGIC_MUL:
+            value = value * level / 200;
+            break;
+          case LOGIC_PLUSINVERS:
+            level = 200 - level;
+            value += level;
+            if ( value > 200 ) value = 200;
+            break;
+            break;
+          case LOGIC_MINUSINVERS:
+            level = 200 - level;
+            if ( level > value ) value = 0;
+            else value -= level;
+            break;
+          case LOGIC_MULINVERS:
+            level = 200 - level;
+            value = value * level / 200;
+            break;
+          case LOGIC_INVERSPLUS:
+            value += level;
+            if ( value > 200 ) value = 200;
+            value = 200 - value;
+            break;
+          case LOGIC_INVERSMINUS:
+            if ( level > value ) value = 0;
+            else value -= level;
+            value = 200 - value;
+            break;
+          case LOGIC_INVERSMUL:
+            value = value * level / 200;
+            value = 200 - value;
+            break;
+        }
+      }
+      // DHEXLN(value);
+      return value;
+    }
+
 };
 
 }

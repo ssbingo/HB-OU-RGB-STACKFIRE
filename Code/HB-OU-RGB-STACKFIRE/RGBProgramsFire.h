@@ -1,5 +1,5 @@
-#ifndef __RGBPROGRAMS_H__
-#define __RGBPROGRAMS_H__
+#ifndef __RGBPROGRAMSFIRE_H__
+#define __RGBPROGRAMSFIRE_H__
 
 CRGBPalette16 gPal;
 
@@ -66,7 +66,6 @@ if (GPALNR == 1) {
 }
 
 
- #ifdef USE MEGA
   if (millis() - lastmillis > 15) {
 
     static byte heat10[WSNUM_LEDS10];
@@ -80,6 +79,7 @@ if (GPALNR == 1) {
     static byte heat18[WSNUM_LEDS18];    
     static byte heat19[WSNUM_LEDS19];    
 
+#ifdef doubleLED
     static byte heat20[WSNUM_LEDS20];  
     static byte heat21[WSNUM_LEDS21];  
     static byte heat22[WSNUM_LEDS22];
@@ -89,7 +89,8 @@ if (GPALNR == 1) {
     static byte heat26[WSNUM_LEDS26];
     static byte heat27[WSNUM_LEDS27];    
     static byte heat28[WSNUM_LEDS28];      
-    static byte heat28[WSNUM_LEDS29];                         
+    static byte heat29[WSNUM_LEDS29];                         
+#endif
 
     for ( int i = 0; i < WSNUM_LEDS10; i++) {
       heat10[i] = qsub8( heat10[i],  random8(0, ((COOLING * 10) / WSNUM_LEDS10) + 2));
@@ -122,6 +123,8 @@ if (GPALNR == 1) {
       heat19[i] = qsub8( heat18[i],  random8(0, ((COOLING * 10) / WSNUM_LEDS19) + 2));
     }                    
 
+
+#ifdef doubleLED
     for ( int i = 0; i < WSNUM_LEDS20; i++) {
       heat20[i] = qsub8( heat20[i],  random8(0, ((COOLING * 10) / WSNUM_LEDS20) + 2));
     }
@@ -152,6 +155,7 @@ if (GPALNR == 1) {
     for ( int i = 0; i < WSNUM_LEDS29; i++) {
       heat29[i] = qsub8( heat29[i],  random8(0, ((COOLING * 10) / WSNUM_LEDS29) + 2));
     }                    
+#endif
 
     for ( int k = WSNUM_LEDS10 - 1; k >= 2; k--) {
       heat10[k] = (heat10[k - 1] + heat10[k - 2] + heat10[k - 2] ) / 3;
@@ -184,6 +188,8 @@ if (GPALNR == 1) {
       heat19[k] = (heat19[k - 1] + heat19[k - 2] + heat19[k - 2] ) / 3;
     }                
 
+
+#ifdef doubleLED
     for ( int k = WSNUM_LEDS20 - 1; k >= 2; k--) {
       heat20[k] = (heat20[k - 1] + heat20[k - 2] + heat20[k - 2] ) / 3;
     }
@@ -214,7 +220,8 @@ if (GPALNR == 1) {
     for ( int k = WSNUM_LEDS29 - 1; k >= 2; k--) {
       heat29[k] = (heat29[k - 1] + heat29[k - 2] + heat29[k - 2] ) / 3;
     }
-        
+#endif    
+       
     if ( random8() < SPARKING ) {
       int y = random8(7);
       heat10[y] = qadd8( heat10[y], random8(160, 255) );
@@ -228,6 +235,7 @@ if (GPALNR == 1) {
       heat18[y] = qadd8( heat18[y], random8(160, 255) );
       heat19[y] = qadd8( heat19[y], random8(160, 255) ); 
 
+#ifdef doubleLED
       heat20[y] = qadd8( heat20[y], random8(160, 255) );
       heat21[y] = qadd8( heat21[y], random8(160, 255) );
       heat22[y] = qadd8( heat22[y], random8(160, 255) );
@@ -238,6 +246,7 @@ if (GPALNR == 1) {
       heat27[y] = qadd8( heat27[y], random8(160, 255) );
       heat28[y] = qadd8( heat28[y], random8(160, 255) );
       heat29[y] = qadd8( heat29[y], random8(160, 255) );     
+#endif
     }
 
     for ( int j = 0; j < WSNUM_LEDS10; j++) {
@@ -348,6 +357,9 @@ if (GPALNR == 1) {
       leds19[pixelnumber] = color;
     }  
 
+
+
+#ifdef doubleLED
     for ( int j = 0; j < WSNUM_LEDS20; j++) {
       //CRGB color = HeatColor( heat[j]);
       byte colorindex = scale8( heat20[j], 240);
@@ -457,77 +469,9 @@ if (GPALNR == 1) {
 
       leds29[pixelnumber] = color;
     }
-      
-    lastmillis = millis();
-  }
-#else
-  if (millis() - lastmillis > 15) {
-
-    static byte heat1[WSNUM_LEDS1];
-    static byte heat2[WSNUM_LEDS2];
-    static byte heat3[WSNUM_LEDS3];
-
-    for ( int i = 0; i < WSNUM_LEDS1; i++) {
-      heat1[i] = qsub8( heat1[i],  random8(0, ((COOLING * 10) / WSNUM_LEDS1) + 2));
-    }
-    for ( int i = 0; i < WSNUM_LEDS2; i++) {
-      heat2[i] = qsub8( heat2[i],  random8(0, ((COOLING * 10) / WSNUM_LEDS2) + 2));
-    }
-    for ( int i = 0; i < WSNUM_LEDS3; i++) {
-      heat3[i] = qsub8( heat3[i],  random8(0, ((COOLING * 10) / WSNUM_LEDS3) + 2));
-    }
-
-    for ( int k = WSNUM_LEDS1 - 1; k >= 2; k--) {
-      heat1[k] = (heat1[k - 1] + heat1[k - 2] + heat1[k - 2] ) / 3;
-    }
-    for ( int k = WSNUM_LEDS2 - 1; k >= 2; k--) {
-      heat2[k] = (heat2[k - 1] + heat2[k - 2] + heat2[k - 2] ) / 3;
-    }
-    for ( int k = WSNUM_LEDS3 - 1; k >= 2; k--) {
-      heat3[k] = (heat3[k - 1] + heat3[k - 2] + heat3[k - 2] ) / 3;
-    }
-
-
-    if ( random8() < SPARKING ) {
-      int y = random8(7);
-      heat1[y] = qadd8( heat1[y], random8(160, 255) );
-      heat2[y] = qadd8( heat2[y], random8(160, 255) );
-      heat3[y] = qadd8( heat3[y], random8(160, 255) );
-    }
-
-    for ( int j = 0; j < WSNUM_LEDS1; j++) {
-      //CRGB color = HeatColor( heat[j]);
-      byte colorindex = scale8( heat1[j], 240);
-      CRGB color = ColorFromPalette( gPal, colorindex);
-      int pixelnumber;
-
-    pixelnumber = j;
-
-      leds1[pixelnumber] = color;
-    }
-    for ( int j = 0; j < WSNUM_LEDS2; j++) {
-      //CRGB color = HeatColor( heat[j]);
-      byte colorindex = scale8( heat2[j], 240);
-      CRGB color = ColorFromPalette( gPal, colorindex);
-      int pixelnumber;
-
-    pixelnumber = j;
-
-      leds2[pixelnumber] = color;
-    }
-    for ( int j = 0; j < WSNUM_LEDS3; j++) {
-      //CRGB color = HeatColor( heat[j]);
-      byte colorindex = scale8( heat3[j], 240);
-      CRGB color = ColorFromPalette( gPal, colorindex);
-      int pixelnumber;
-
-    pixelnumber = j;
-
-      leds3[pixelnumber] = color;
-    }
-    lastmillis = millis();
-  }
 #endif
+    lastmillis = millis();
+  }
 }
 
 #endif
