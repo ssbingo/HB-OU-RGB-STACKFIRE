@@ -16,7 +16,11 @@
 
 //#define ENABLE_RGBW
 
+// - ---------------------------------------------------------------------------- -
+// Bei der Belegung der LED-Anschlüsse 11-20                                      -
+// - ---------------------------------------------------------------------------- -
 #define doubleLED
+
 
 // - ---------------------------------------------------------------------------- -
 // Anzahl der LED's pro Augang - Arduino Mega 2560                                -
@@ -77,9 +81,6 @@
   #define WSLED_TYPE    WS2812B    //LED Typ
   #define WSCOLOR_ORDER GRB        //Farbreihenfolge
 
-
-
-
   #define SLOW_PROGRAM_TIMER     30     //ms Wartezeit für den Übergang
   #define NORMAL_PROGRAM_TIMER   15     //ms Wartezeit für den Übergang
   #define FAST_PROGRAM_TIMER     0      //ms Wartezeit für den Übergang
@@ -92,29 +93,29 @@
 //  -------------------------------------------------------------------------------------
 // COOLING:   20 hohe Flamme ..... 100 kurze Flamme
 // SPARKING:  50  mehr Flackern ..... 200 mehr Lodern
+// RGBCtrl.h Zeile 748-772 RGBProgramFire1(brightness,"1-6");
 //
-//
-//  Programm: Langsamer Durchlauf
+//  Programm: Langsamer Durchlauf (1)
   #define FIRE_PRG_1_1_COOLING   60
   #define FIRE_PRG_1_1_SPARKING 180
 //
-//  Programm: Normaler Durchlauf
+//  Programm: Normaler Durchlauf (2)
   #define FIRE_PRG_1_2_COOLING  80
   #define FIRE_PRG_1_2_SPARKING 200
 //
-//  Programm: Schneller Durchlauf
+//  Programm: Schneller Durchlauf (3)
   #define FIRE_PRG_1_3_COOLING  60
   #define FIRE_PRG_1_3_SPARKING 130
 //
-//  Programm: Lagerfeuer
+//  Programm: Lagerfeuer (4)
   #define FIRE_PRG_2_1_COOLING  60  
   #define FIRE_PRG_2_1_SPARKING 180
 //
-//  Programm: Wasserfall
+//  Programm: Wasserfall (5)
   #define FIRE_PRG_2_2_COOLING  80
   #define FIRE_PRG_2_2_SPARKING 200
 //
-//  Programm: TV-Simulation
+//  Programm: TV-Simulation (6)
   #define FIRE_PRG_2_3_COOLING  60
   #define FIRE_PRG_2_3_SPARKING 130
 //  -------------------------------------------------------------------------------------
