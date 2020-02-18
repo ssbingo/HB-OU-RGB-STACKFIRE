@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name WS2812B-Protect-rescue)(type Legacy)(uri ${KIPRJMOD}/WS2812B-Protect-rescue.lib)(options "")(descr ""))
-)
