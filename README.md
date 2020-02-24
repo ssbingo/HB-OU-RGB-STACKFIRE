@@ -26,7 +26,7 @@
 
 ## Platine
 
-[:arrow_right: PCB Gerber](Platine/HB-OU-RGB-STACKFIRE(Mega2560)-V2/HB-OU-RGB-STACKFIRE-V2.zip
+[:arrow_right: PCB Gerber](Platine/HB-OU-RGB-STACKFIRE(Mega2560)-V2/HB-OU-RGB-STACKFIRE-V2.zip)
 
 ![pic](Images/PCB_HB-OU-RGB-STACKFIRE/HB-OU-RGB-STACKFIRE_Front.png)
 
