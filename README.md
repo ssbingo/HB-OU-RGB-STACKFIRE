@@ -19,9 +19,9 @@
 
 ## Schaltplan
 
-![pic](Images/Schaltplan_HB-OU-RGB-STACKFIRE-V2.png)
+![pic](Images/PCB_HB-OU-RGB-STACKFIRE/Schaltplan_HB-OU-RGB-STACKFIRE-V2.png)
 
-[:arrow_right: Schaltplan](Images/Schaltplan_HB-OU-RGB-STACKFIRE-V2.pdf)
+[:arrow_right: Schaltplan](Images/PCB_HB-OU-RGB-STACKFIRE/Schaltplan_HB-OU-RGB-STACKFIRE-V2.pdf)
 
 
 ## Platine
