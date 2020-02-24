@@ -1,18 +1,18 @@
 EESchema Schematic File Version 4
-LIBS:HB-OU-RGB-STACKFIRE-cache
+LIBS:HB-OU-RGB-STACKFIRE-V3-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "HB-OU-RGB-STACKFIRE"
-Date "2020-01-20"
-Rev ""
+Date "2020-02-24"
+Rev "3.0.1"
 Comp ""
-Comment1 ""
-Comment2 ""
-Comment3 ""
-Comment4 ""
+Comment1 "©S. Sternitzke"
+Comment2 "with external Button"
+Comment3 "Bauart: Röhre Plexiglas XT satiniert (Ø200/194mm)"
+Comment4 "Feuersimulation mit WS2812B"
 $EndDescr
 $Comp
 L Homebrew:CC1101 U1
@@ -541,9 +541,7 @@ Wire Wire Line
 Wire Wire Line
 	2045 6880 2220 6880
 Wire Wire Line
-	2320 7280 2320 7180
-Wire Wire Line
-	2045 7180 2320 7180
+	2045 7180 2140 7180
 $Comp
 L Homebrew:TSP-05 PS1
 U 1 1 5E543C2B
@@ -797,7 +795,6 @@ Text Label 4045 2755 2    50   ~ 0
 WS28XX_20
 Wire Wire Line
 	4045 2755 3460 2755
-NoConn ~ 3460 3055
 NoConn ~ 3460 3255
 NoConn ~ 3460 3455
 NoConn ~ 3460 3655
@@ -1364,17 +1361,51 @@ Wire Wire Line
 Wire Wire Line
 	1310 7705 1160 7705
 Wire Wire Line
-	1260 7285 2320 7285
-Wire Wire Line
-	2320 7285 2320 7280
-Connection ~ 1260 7285
-Connection ~ 2320 7280
-Wire Wire Line
 	1310 7385 2220 7385
 Wire Wire Line
-	2220 7385 2220 6880
+	2220 7385 2220 7280
 Connection ~ 1310 7385
-Connection ~ 2220 6880
 Wire Wire Line
-	2220 6880 2320 6880
+	2320 7280 2220 7280
+Connection ~ 2220 7280
+Wire Wire Line
+	2220 7280 2220 6880
+Wire Wire Line
+	1260 7285 2140 7285
+Wire Wire Line
+	2140 7285 2140 7180
+Connection ~ 1260 7285
+Connection ~ 2140 7180
+Wire Wire Line
+	2320 7180 2320 6880
+Wire Wire Line
+	2140 7180 2320 7180
+$Comp
+L Switch:SW_DIP_x01 SW2
+U 1 1 5E553CE5
+P 3885 3055
+F 0 "SW2" H 4130 3135 50  0000 C CNN
+F 1 "External Button" H 3885 2910 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3885 3055 50  0001 C CNN
+F 3 "" H 3885 3055 50  0001 C CNN
+	1    3885 3055
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3460 3055 3585 3055
+$Comp
+L power:GND #PWR?
+U 1 1 5E5822DA
+P 4300 3075
+F 0 "#PWR?" H 4300 2825 50  0001 C CNN
+F 1 "GND" H 4305 2902 50  0000 C CNN
+F 2 "" H 4300 3075 50  0001 C CNN
+F 3 "" H 4300 3075 50  0001 C CNN
+	1    4300 3075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4185 3055 4300 3055
+Wire Wire Line
+	4300 3055 4300 3075
 $EndSCHEMATC
