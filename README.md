@@ -28,9 +28,9 @@
 
 [:arrow_right: PCB Gerber](PCB)
 
-![pic](Images/*.png)
+![pic](Images/PCB HB-OU-RGB-STACKFIRE/HB-OU-RGB-STACKFIRE_Front.png)
 
-![pic](Images/*.png)
+![pic](Images/PCB HB-OU-RGB-STACKFIRE/HB-OU-RGB-STACKFIRE_Back.png)
 
 
 ## Aufbau / Stückliste
