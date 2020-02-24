@@ -12,9 +12,7 @@
 #include <AskSinPP.h>
 #include <LowPower.h>
 #include <Register.h>
-#include "analog.h"
 
-//#define ENABLE_RGBW
 
 // - ---------------------------------------------------------------------------- -
 // Bei der Belegung der LED-Anschlüsse 11-20                                      -
@@ -87,7 +85,6 @@
   #define FIRE_PROGRAM_COOLING   55
   #define FIRE_PROGRAM_SPARKLING 120
 
-
 //  -------------------------------------------------------------------------------------
 //  - Auswahl der Flammendarstellung (siehe Fire2012/Fire2012WithPalette                -
 //  -------------------------------------------------------------------------------------
@@ -120,9 +117,6 @@
   #define FIRE_PRG_2_3_SPARKING 130
 //  -------------------------------------------------------------------------------------
 
-
-
-
 //  -------------------------------------------------------------------------------------
 //  - Auswahl der Farbpalette für FirePrg2 (siehe Fire2012WithPalette                   -
 //  - Standard: HeatColors_p                                                            -
@@ -146,7 +140,6 @@
 //  11: gPal = LavaColors_p;
 //  -------------------------------------------------------------------------------------
 
-
 //
 //  -------------------------------------------------------------------------------------
 //  - Auswahl der Darstellungsgeschwindigkeit                                           -
@@ -157,24 +150,16 @@
 #define FRAMES_PER_SECOND 100
 //
 
-
-
-
 #if defined __AVR_ATmega2560__
 #define CONFIG_BUTTON_PIN 13
-#else
-#define CONFIG_BUTTON_PIN 8
 #endif
+
 #define ONBOARD_LED_PIN   4
 
 
 // PINs for external Buttons
 #define BTN1_PIN 33
 
-
-#ifdef ENABLE_RGBW
-#include "FastLED_RGBW.h"
-#endif
 #include "RGBCtrl.h"
 
 #define PEERS_PER_CHANNEL 4
@@ -196,8 +181,6 @@ const struct DeviceInfo PROGMEM devinfo = {
 */
 #if defined __AVR_ATmega2560__
 typedef AskSin<StatusLed<ONBOARD_LED_PIN>, NoBattery, Radio<LibSPI<53>, 2>> HalType;
-#else
-typedef AskSin<StatusLed<ONBOARD_LED_PIN>, NoBattery, Radio<LibSPI<10>, 2>> HalType;
 #endif
 
 DEFREGISTER(Reg0, MASTERID_REGS, 0x20, 0x21)
@@ -230,9 +213,7 @@ void loop() {
   bool worked = hal.runready();
   bool poll = sdev.pollRadio();
   if ( worked == false && poll == false ) {
-#ifndef PWM_ENABLED
     hal.activity.savePower<Idle<true>>(hal);
-#endif
   }
   
   sdev.handleLED();
