@@ -56,6 +56,8 @@ Ich nutze zum drucken PETG.
 
 
 ## Aufbau / Stückliste
+
+### Der Aufbau
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Grundgehäuse_mit_Netzteilen.jpg)
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Auflage_Platine.jpg)
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Teil1_ohne_Rohr.jpg)
@@ -65,9 +67,6 @@ Ich nutze zum drucken PETG.
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Testaufbau_01.JPG)
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Testaufbau_02.JPG)
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Testaufbau_03.JPG)
-
-
-### Der Aufbau
 
 
 
