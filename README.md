@@ -32,6 +32,15 @@
 
 ![pic](Images/PCB_HB-OU-RGB-STACKFIRE/HB-OU-RGB-STACKFIRE_Back_klein.png)
 
+## Gehäuse
+
+Das Gehaäuse ist ein 3D-Druck. Auf Grund der Größe ist hier mindestens ein Druckbereich von 220x220x200 erforderlich.
+(ANET A8/A6/A10 o.ä).
+Der Sockel besteht auf dem [Grundgehäuse](Gehäuse/Stack-Fire-Leuchte_Sockel_V1.stl) und der [Auflageplatte](Gehäuse/Stack-Fire-Leuchte_Sockel_Platine_V1.stl) für de Platine.
+Desweiteren werden noch 2 Abschlussdeckel [oben](Gehäuse/Stack-Fire-Leuchte_Deckel_ALU_oben_V1.stl) und [unten](Gehäuse/Stack-Fire-Leuchte_Deckel_ALU_unten_V1.stl) für das AluRohr benötigt. 
+Ich nutze zum drucken PETG. 
+
+
 
 ## Aufbau / Stückliste
 | Bauteil | Link |
