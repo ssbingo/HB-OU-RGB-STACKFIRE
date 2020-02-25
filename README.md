@@ -4,7 +4,7 @@ Viele Projekte haben sich mit der Steuerung von WS2812B-LED's befasst.
 Eigentlich wollte ich aus dem Tee-Licht-Projekt vom [pafra-123](https://github.com/pafra-123/HB_LED_Teelicht) einen kleinen Kamin für die Weihnachtskrippe machen.
 Daraus enstand der Gedanke an eine etwas größere Kamin-/Lagerfeuer-Simulation. 
 Irgendwo fand ich dann das Projekt einer Nachttischlampe.
-Im Großen und Ganzen ganz hübsch, mir jedoch zu klein. Ich wollte es als Raumdeko, als Hingucker bei der Gartenparty und als gemütliches Highlight abends vor dem Wohnwagen. Und ich wollte es Homematic-gebunden haben. Da fand ich den [RGB-Controler](https://github.com/jp112sdl/HB-UNI-RGB-LED-CTRL) von Jérôme(jp112sdl)
+Im Großen und Ganzen ganz hübsch, mir jedoch zu klein. Ich wollte es als Raumdeko, als Hingucker bei der Gartenparty und als gemütliches Highlight abends vor dem Wohnwagen. Und ich wollte es Homematic-gebunden haben. Da fand ich den [RGB-Controler](https://github.com/jp112sdl/HB-UNI-RGB-LED-CTRL) von Jérôme(jp112sdl).<br>
 So verschmolzen Teile diverser Projekte zu einem Neuen.
 
 
