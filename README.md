@@ -56,6 +56,13 @@ Ich nutze zum drucken PETG.
 
 
 ## Aufbau / Stückliste
+
+### Der Aufbau
+
+
+
+
+### Die benötigten Bauteile
 | Bauteil | Link |
 | --------|------|
 |50cm Alurohr Länge: 0,5-3 m Aluminium Rohr Alu Profil Rundrohr AlMgSi0,5 Modellbau | [:arrow_right: Ebay](https://www.ebay.de/itm/Alurohr-L%C3%A4nge-0-5-3-m-Aluminium-Rohr-Alu-Profil-Rundrohr-AlMgSi0-5-Modellbau/222169076786?ssPageName=STRK%3AMEBIDX%3AIT&var=521010583605&_trksid=p2057872.m2749.l2649) |
