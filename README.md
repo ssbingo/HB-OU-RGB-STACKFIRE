@@ -10,7 +10,7 @@ So verschmolzen Teile diverser Projekte zu einem Neuen.
 
 ## Bilder
 
-![pic](Images/*.jpg)
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Leuchte_komplett.jpg)
 
 ![pic](Images/*.jpg)
 
