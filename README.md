@@ -59,11 +59,9 @@ In dieses bzw. dessen Struckture müssen die Dateien aus dem Verzeichniss [AddOn
 
 ## Benötige Libraries
 
-[AskSinPP Library](https://github.com/pa-pa/AskSinPP)
- - sowie die dort aufgeführten [zusätzlichen Bibliotheken](https://github.com/pa-pa/AskSinPP#required-additional-arduino-libraries)
-[EnableInterrupt](https://github.com/GreyGnome/EnableInterrupt)</br>
-[Low-Power](https://github.com/rocketscream/Low-Power)</br>
-[FastLED](https://github.com/FastLED/FastLED)
+ - [FastLED](https://github.com/FastLED/FastLED)
+ - [AskSinPP](https://github.com/pa-pa/AskSinPP)
+   - sowie die dort aufgeführten [zusätzlichen Bibliotheken](https://github.com/pa-pa/AskSinPP#required-additional-arduino-libraries)
 
 
 ## Lizenz
