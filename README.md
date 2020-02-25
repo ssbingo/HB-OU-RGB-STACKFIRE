@@ -67,8 +67,9 @@ Ich nutze zum drucken PETG.
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Testaufbau_01.JPG)
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Testaufbau_02.JPG)
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Testaufbau_03.JPG)
-
-
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Plexiglasrohr.jpg)
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Plexiglasrohr_mit_Deckel.jpg)
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/WS2812B-Protect.jpg)
 
 
 ### Die benötigten Bauteile
