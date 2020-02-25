@@ -56,6 +56,16 @@ Ich nutze zum drucken PETG.
 
 
 ## Aufbau / Stückliste
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Grundgehäuse mit Netzteilen.jpg)
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Auflage Platine.jpg)
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Teil 1 ohne Rohr.jpg)
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Rohrdeckel.jpg)
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Teil 2 mit Rohr.jpg)
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Rohr mit WS2812B.jpg)
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Testaufbau_01.JPG)
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Testaufbau_02.JPG)
+![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Testaufbau_03.JPG)
+
 
 ### Der Aufbau
 
