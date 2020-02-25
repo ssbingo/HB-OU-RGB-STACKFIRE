@@ -59,17 +59,40 @@ Ich nutze zum drucken PETG.
 
 ### Der Aufbau
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Grundgehäuse_mit_Netzteilen.jpg)
+Grundgehäuse mit Netzteilen<br>
+
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Auflage_Platine.jpg)
+Auflage für die Platine<br>
+
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Teil1_ohne_Rohr.jpg)
+Einbau der Auflage mit Verschraubung des Rohrhalters<br>
+
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Rohrdeckel.jpg)
+Rohrdeckel mit Verschraubung<br>
+
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Teil2_mit_Rohr.jpg)
+Montage des Alurohrs (dieses wird vor Anbringen der LED-Stripes komplett mit dem Wärmeleitklebeband beklebt<br>
+
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Rohr_mit_WS2812B.jpg)
+Rohr mit voller Bestückung 20x30LED<br>
+
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Testaufbau_01.JPG)
+Testaufbau Teil 1<br>
+
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Testaufbau_02.JPG)
+Testbaubau Teil 2<br>
+
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Testaufbau_03.JPG)
+Testaufbau Teil 3<br>
+
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Plexiglasrohr.jpg)
+Das Plexiglasrohr. Dieses wird am Ende einfach auf das Grundgehäuse gesteckt und kann bei Bedarf mit 4 Schrauben fixiert werden.<br>
+
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/Plexiglasrohr_mit_Deckel.jpg)
+Der passende Deckel kann direkt mit bestellt werden. Er ist so gefrässt, dass er passgenau auf das Rohr geklebt werden kann<br>
+
 ![pic](Images/Aufbau_HB-OU-RGB-STACKFIRE/WS2812B-Protect.jpg)
+Prototype der WS2812B-Protect Platine. Diese wird nach der Bestückung direkt an den Stripe gelötet. Als Steckverbinder habe ich von gewinkelten Pinleisten (Raster 2.54) einfach die Stifte einzeln genommen. Ist viel Fummelei... <br>
 
 
 ### Die benötigten Bauteile
