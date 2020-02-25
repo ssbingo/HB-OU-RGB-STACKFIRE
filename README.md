@@ -52,6 +52,7 @@
 ## CCU2/CCU3/RaspberryMatic Installation
 
 Einstellungen/Systemsteuerung/Zusatzsoftware -> Datei 
+
 Ich nutze das AddOn von Jérôme (jp112sdl) [JP-HB-Devices-addon](https://github.com/jp112sdl/JP-HB-Devices-addon).
 In dieses bzw. dessen Struckture müssen die Dateien aus dem Verzeichniss [AddOn](AddOn) entsprechend selbst eingebunden werden und das AddOn dann installiert werden.
 
@@ -59,8 +60,10 @@ In dieses bzw. dessen Struckture müssen die Dateien aus dem Verzeichniss [AddOn
 ## Benötige Libraries
 
 [AskSinPP Library](https://github.com/pa-pa/AskSinPP)</br>
+ - sowie die dort aufgeführten [zusätzlichen Bibliotheken](https://github.com/pa-pa/AskSinPP#required-additional-arduino-libraries)</br>
 [EnableInterrupt](https://github.com/GreyGnome/EnableInterrupt)</br>
-[Low-Power](https://github.com/rocketscream/Low-Power)
+[Low-Power](https://github.com/rocketscream/Low-Power)</br>
+[FastLED](https://github.com/FastLED/FastLED)
 
 
 ## Lizenz
