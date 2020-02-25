@@ -19,7 +19,7 @@ So verschmolzen Teile diverser Projekte zu einem Neuen.
 
 ## Konfiguration
 ### auf der Platine
-Die aktuelle Version der PCB verfügt über einen 2-fach Jumper J4 (VCC). Dieser ermöglicht es, die Leuchte ohne das [AZDelivery 5 x 220V zu 5V Mini-Netzteil](https://www.amazon.de/gp/product/B07V7GHK51/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1) zu betreiben. Die Schaltung wird dann über das erste Netzteil der Stripes mit versorgt.
+Die aktuelle Version der PCB verfügt über einen 2-fach Jumper J4 (VCC). Dieser ermöglicht es, die Leuchte ohne das [AZDelivery 5 x 220V zu 5V Mini-Netzteil](https://www.amazon.de/gp/product/B07V7GHK51/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1) zu betreiben. Die Schaltung wird dann über das erste Netzteil der Stripes mit versorgt.<br>
 :exclamation:Die Jumper dürfen auf keinen Fall gesteckt werden, wenn das Mini-Netzteil auf der Platine verbaut ist.
 Mit dem Einsatz des Mini-Netzteiles habe ich die Möglichkeit, über den im Boden eingauten Schalter, die Netzteile der LED's abzuschalten, ohne dabei den Mega2560 vom Netz zu nehmen. Es kommen somit keine Servicemeldungen über ein "nicht erreichbares Gerät"
 
