@@ -18,17 +18,19 @@ So verschmolzen Teile diverser Projekte zu einem Neuen.
 
 
 ## Konfiguration
-Die Lame ist so geplant, dass sie entwerder mit 10 Stripes á 30LED's oder mit 20 Stripes á 30LED's bestückt werden kann.
+Die Leuchte ist so geplant, dass sie entwerder mit 10 Stripes á 30LED's oder mit 20 Stripes á 30LED's bestückt werden kann.
 Die beiden Netzteile im Grundgehäuse versorgen jeweils immer jeden 2. Ausgang.<br>
-In Zeile 20 muss bei voller Bestückung der Paramter<br> #define doubleLED<br> gesetzt werden.<br> Bei halber Bestückung entsprechend auskommentieren.<br>
+Das Grundgehäuse hat für die Befestigung der Netzteile entsprechende Bohrungen(Abstandshalter).<br><br>
 
-Die Zeilen 30-75 definieren die Anzahl der LED's je Stripe sowie die entsprechenden Ports der Arduino Mega 2560 Core.<br>
+In Zeile 20 muss bei voller Bestückung der Paramter<br> #define doubleLED<br> gesetzt werden.<br> Bei halber Bestückung entsprechend auskommentieren.<br><br>
+
+Die Zeilen 30-75 definieren die Anzahl der LED's je Stripe sowie die entsprechenden Ports der Arduino Mega 2560 Core.<br><br>
 
 In den Zeilen 88-117 kann das Verhalten des FireProgramm's in Intensität (Sparking) und Flammenhöhe (Cooling) nach Bedarf angepasst werden.
 Derzeit sind nur die letzten 3 Programme (Lagerfeuer, Wasserfall, TV-Simulation) als Feuer verknüpft.<br>
-siehe: RGBCtrl.h Zeile 748-772 RGBProgramFire1(brightness,"1-6");<br>
+siehe: RGBCtrl.h Zeile 748-772 RGBProgramFire1(brightness,"1-6");<br><br>
 
-In den Zeilen 123-144: FastLED liefert von Haus aus diverse Farbpaletten mit. Für ein Lagerfeuer haben sich bisher Nr.10 (HeatColors_p) oder Nr.11 (LavaColors_p) bewährt. 
+In den Zeilen 123-144: FastLED liefert von Haus aus diverse Farbpaletten mit. Für ein Lagerfeuer haben sich bisher Nr.10 (HeatColors_p) oder Nr.11 (LavaColors_p) bewährt.<br><br>
 
 ## Schaltplan
 
