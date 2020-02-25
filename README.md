@@ -80,6 +80,7 @@ Ich nutze zum drucken PETG.
 |WS2812B-Protect | [:arrow_right: Reichelt Bestell-Liste](https://www.reichelt.de/my/1667564) |
 |Limeow Thermisch Klebeband Wärmeleitendes Doppelseitiges Klebeband Selbstklebend Tape Wärmeleitpaste Thermal Compound Thermische Verbindung Paste Kühlkörper Leitfähiges Kühlband Doppelseitig Klebend | [:arrow_right: Amazon](https://www.amazon.de/gp/product/B07FPKVML7/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1) |
 |AZDelivery 5 x 220V zu 5V Mini-Netzteil für Arduino und Raspberry Pi | [:arrow_right: Amazon](https://www.amazon.de/gp/product/B07V7GHK51/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1) |
+|MW LRS-150F-5 Schaltnetzteil, geschlossen, 110 W, 5 V, 22 A | [:arrow_right: Reichelt](https://www.reichelt.de/schaltnetzteil-geschlossen-110-w-5-v-22-a-mw-lrs-150f-5-p202979.html?&nbc=1)|
 
 
 ## Hinweise
