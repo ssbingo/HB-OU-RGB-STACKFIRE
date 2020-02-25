@@ -28,12 +28,6 @@
 #define LOGIC_INVERSMINUS 15
 #define LOGIC_INVERSMUL 16
 
-#ifdef ENABLE_RGBW
-CRGBW leds10[WSNUM_LEDS10];
-CRGBW leds11[WSNUM_LEDS11];
-CRGB *ledsRGB10 = (CRGB *) &leds10[0];
-CRGB *ledsRGB11 = (CRGB *) &leds11[0];
-#else
   CRGB leds10[WSNUM_LEDS10];
   CRGB leds11[WSNUM_LEDS11];
   CRGB leds12[WSNUM_LEDS12];
@@ -58,7 +52,6 @@ CRGB *ledsRGB11 = (CRGB *) &leds11[0];
   CRGB leds29[WSNUM_LEDS29];  
 #endif
   
-#endif
 
 #include "RGBPrograms.h"
 #include "RGBProgramsFire.h"
@@ -876,15 +869,6 @@ class RGBLEDDevice : public MultiChannelDevice<HalType, ChannelType, ChannelCoun
 
       FastLED.show();
 
-#ifdef PWM_ENABLED
-      static AnalogPWMController<PWM_RED_PIN, PWM_GREEN_PIN, PWM_BLUE_PIN, PWM_WHITE_PIN, PWM_WHITE_ONLY> controler;
-      FastLED.addLeds(&controler, leds10, 1);
-#else
-#ifdef ENABLE_RGBW
-      FastLED.addLeds<WSLED_TYPE, WSLED_PIN_10, RGB>(ledsRGB10, getRGBWsize(WSNUM_LEDS10));
-      FastLED.addLeds<WSLED_TYPE, WSLED_PIN_11, RGB>(ledsRGB11, getRGBWsize(WSNUM_LEDS11));
-#else
-
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_10, WSCOLOR_ORDER>(leds10, WSNUM_LEDS10);
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_11, WSCOLOR_ORDER>(leds11, WSNUM_LEDS11);
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_12, WSCOLOR_ORDER>(leds12, WSNUM_LEDS12);
@@ -908,8 +892,7 @@ class RGBLEDDevice : public MultiChannelDevice<HalType, ChannelType, ChannelCoun
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_28, WSCOLOR_ORDER>(leds28, WSNUM_LEDS28);  
       FastLED.addLeds<WSLED_TYPE, WSLED_PIN_29, WSCOLOR_ORDER>(leds29, WSNUM_LEDS29);       
 #endif      
-#endif
-#endif
+
 
       DeviceType::channel(2).setColor(0);
     }

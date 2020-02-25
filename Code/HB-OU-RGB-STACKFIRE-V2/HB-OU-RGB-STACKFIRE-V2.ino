@@ -14,13 +14,10 @@
 #include <Register.h>
 #include "analog.h"
 
-//#define ENABLE_RGBW
-
 // - ---------------------------------------------------------------------------- -
 // Bei der Belegung der LED-Anschlüsse 11-20                                      -
 // - ---------------------------------------------------------------------------- -
 #define doubleLED
-
 
 // - ---------------------------------------------------------------------------- -
 // Anzahl der LED's pro Augang - Arduino Mega 2560                                -
@@ -167,9 +164,6 @@
 #endif
 #define ONBOARD_LED_PIN   4
 
-#ifdef ENABLE_RGBW
-#include "FastLED_RGBW.h"
-#endif
 #include "RGBCtrl.h"
 
 #define PEERS_PER_CHANNEL 4
@@ -223,9 +217,7 @@ void loop() {
   bool worked = hal.runready();
   bool poll = sdev.pollRadio();
   if ( worked == false && poll == false ) {
-#ifndef PWM_ENABLED
     hal.activity.savePower<Idle<true>>(hal);
-#endif
   }
   
   sdev.handleLED();
