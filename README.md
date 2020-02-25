@@ -14,8 +14,8 @@
 
 ## Konfiguration
 Die Lame ist so geplant, dass sie entwerder mit 10 Stripes á 30LED's oder mit 20 Stripes á 30LED's bestückt werden kann.
-Die beiden Netzteile im Grundgehäuse versorgen jeweils immer jeden 2. Ausgang
-in Zeile 20 muss bei voller Bestückung der Paramter #define doubleLED gesetzt werden. Bei halber Bestückung entsprechend auskommentieren.
+Die beiden Netzteile im Grundgehäuse versorgen jeweils immer jeden 2. Ausgang.<br>
+In Zeile 20 muss bei voller Bestückung der Paramter #define doubleLED gesetzt werden. Bei halber Bestückung entsprechend auskommentieren.
 
 
 ## Schaltplan
