@@ -180,11 +180,11 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Homebrew_8-Kanal_LevelShifter
+# HomeBrew_8-Kanal_LevelShifter
 #
-DEF Homebrew_8-Kanal_LevelShifter U 0 40 Y Y 1 F N
+DEF HomeBrew_8-Kanal_LevelShifter U 0 40 Y Y 1 F N
 F0 "U" -450 -350 50 H V C CNN
-F1 "Homebrew_8-Kanal_LevelShifter" -100 850 50 H V C CNN
+F1 "HomeBrew_8-Kanal_LevelShifter" -100 850 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -212,11 +212,11 @@ X A8 9 -600 -100 100 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# Homebrew_CC1101
+# HomeBrew_CC1101
 #
-DEF Homebrew_CC1101 U 0 40 Y Y 1 F N
+DEF HomeBrew_CC1101 U 0 40 Y Y 1 F N
 F0 "U" -50 700 60 H V C CNN
-F1 "Homebrew_CC1101" 400 -100 60 H V C CNN
+F1 "HomeBrew_CC1101" 400 -100 60 H V C CNN
 F2 "" 0 0 60 H I C CNN
 F3 "" 0 0 60 H I C CNN
 DRAW
@@ -232,11 +232,11 @@ X CSN 8 800 50 200 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# Homebrew_Stackfire-Ring
+# HomeBrew_Stackfire-Ring
 #
-DEF Homebrew_Stackfire-Ring J 0 40 Y Y 1 F N
+DEF HomeBrew_Stackfire-Ring J 0 40 Y Y 1 F N
 F0 "J" 100 450 50 H V C CNN
-F1 "Homebrew_Stackfire-Ring" -1250 600 50 H V C CNN
+F1 "HomeBrew_Stackfire-Ring" -1250 600 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -351,11 +351,11 @@ X GND 99 -2250 -1950 100 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# Homebrew_TSP-05
+# HomeBrew_TSP-05
 #
-DEF Homebrew_TSP-05 PS 0 40 Y Y 1 F N
+DEF HomeBrew_TSP-05 PS 0 40 Y Y 1 F N
 F0 "PS" 550 550 50 H V C CNN
-F1 "Homebrew_TSP-05" -500 -450 50 H V C CNN
+F1 "HomeBrew_TSP-05" -500 -450 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW

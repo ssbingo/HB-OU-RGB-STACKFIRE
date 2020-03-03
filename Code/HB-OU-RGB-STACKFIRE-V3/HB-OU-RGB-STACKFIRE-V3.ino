@@ -13,12 +13,10 @@
 #include <LowPower.h>
 #include <Register.h>
 
-
 // - ---------------------------------------------------------------------------- -
 // Bei der Belegung der LED-Anschlüsse 11-20                                      -
 // - ---------------------------------------------------------------------------- -
 #define doubleLED
-
 
 // - ---------------------------------------------------------------------------- -
 // Anzahl der LED's pro Augang - Arduino Mega 2560                                -
@@ -51,7 +49,13 @@
   #define WSNUM_LEDS28    30         //Anzahl angeschlossener LEDs
   #define WSNUM_LEDS29    30         //Anzahl angeschlossener LEDs  
 #endif
-                    
+
+// - ---------------------------------------------------------------------------- -
+// Definition der Pin-Zuordnung                                                   -
+// ACHTUNG:                                                                       -
+// Bei Anpassungen darauf achten, dass je nach Konfiguration nur jeder 2. Ausgang -
+// spannungstechnisch versorgt wird.                                              -
+// - ---------------------------------------------------------------------------- -
   #define WSLED_PIN_10   3           //GPIO Pin LED Anschluss - Stripe 1 
   #define WSLED_PIN_11   5           //GPIO Pin LED Anschluss - Stripe 2
   #define WSLED_PIN_12   7           //GPIO Pin LED Anschluss - Stripe 3
@@ -140,15 +144,12 @@
 //  11: gPal = LavaColors_p;
 //  -------------------------------------------------------------------------------------
 
-//
 //  -------------------------------------------------------------------------------------
 //  - Auswahl der Darstellungsgeschwindigkeit                                           -
 //    I recommend running this simulation at anywhere from 30-100 frames per second,    -
 //    meaning an interframe delay of about 10-35 milliseconds.                          -
 //  -------------------------------------------------------------------------------------
-//
 #define FRAMES_PER_SECOND 100
-//
 
 #if defined __AVR_ATmega2560__
 #define CONFIG_BUTTON_PIN 13
@@ -158,11 +159,11 @@
 
 
 // PINs for external Buttons
-#define BTN1_PIN 33
+#define BTN1_PIN 6
 
 #include "RGBCtrl.h"
 
-#define PEERS_PER_CHANNEL 4
+#define PEERS_PER_CHANNEL 8
 
 using namespace as;
 
@@ -199,13 +200,20 @@ typedef RGBLEDDevice<HalType, ChannelType, 3, Ws28xxList0> RGBLEDType;
 HalType hal;
 RGBLEDType sdev(devinfo, 0x20);
 ConfigButton<RGBLEDType> cfgBtn(sdev);
-InternalButton<RGBLEDType> btn1(sdev, 4);
+InternalButton<RGBLEDType> btn1(sdev, 1);
 
 void setup () {
   DINIT(57600, ASKSIN_PLUS_PLUS_IDENTIFIER);
   sdev.init(hal);
   buttonISR(cfgBtn, CONFIG_BUTTON_PIN);
   buttonISR(btn1, BTN1_PIN);
+
+/*
+  // Set frequency for CC1101
+  hal.radio.initReg(CC1101_FREQ2, 0x21);
+  hal.radio.initReg(CC1101_FREQ1, 0x65);
+  hal.radio.initReg(CC1101_FREQ0, 0x62);
+*/  
   sdev.initDone();
 }
 

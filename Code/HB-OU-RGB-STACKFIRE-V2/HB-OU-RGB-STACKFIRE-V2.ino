@@ -12,7 +12,7 @@
 #include <AskSinPP.h>
 #include <LowPower.h>
 #include <Register.h>
-#include "analog.h"
+
 
 // - ---------------------------------------------------------------------------- -
 // Bei der Belegung der LED-Anschlüsse 11-20                                      -
@@ -105,12 +105,12 @@
   #define FIRE_PRG_1_3_SPARKING 130
 //
 //  Programm: Lagerfeuer (4)
-  #define FIRE_PRG_2_1_COOLING  60  
-  #define FIRE_PRG_2_1_SPARKING 180
+  #define FIRE_PRG_2_1_COOLING  100 //60  
+  #define FIRE_PRG_2_1_SPARKING 50  //180
 //
 //  Programm: Wasserfall (5)
   #define FIRE_PRG_2_2_COOLING  80
-  #define FIRE_PRG_2_2_SPARKING 200
+  #define FIRE_PRG_2_2_SPARKING 75 //200
 //
 //  Programm: TV-Simulation (6)
   #define FIRE_PRG_2_3_COOLING  60
@@ -124,7 +124,7 @@
 //  - Auswahl der Farbpalette für FirePrg2 (siehe Fire2012WithPalette                   -
 //  - Standard: HeatColors_p                                                            -
 //  -------------------------------------------------------------------------------------
-#define GPALNR 10
+#define GPALNR 9
 //    
 //  1:  static uint8_t hue = 0;
 //      hue++;
@@ -151,11 +151,8 @@
 //    meaning an interframe delay of about 10-35 milliseconds.                          -
 //  -------------------------------------------------------------------------------------
 //
-#define FRAMES_PER_SECOND 100
+#define FRAMES_PER_SECOND 30
 //
-
-
-
 
 #if defined __AVR_ATmega2560__
 #define CONFIG_BUTTON_PIN 13
@@ -210,6 +207,14 @@ void setup () {
   DINIT(57600, ASKSIN_PLUS_PLUS_IDENTIFIER);
   sdev.init(hal);
   buttonISR(cfgBtn, CONFIG_BUTTON_PIN);
+  
+  /*
+  // Set frequency for CC1101
+  hal.radio.initReg(CC1101_FREQ2, 0x21);
+  hal.radio.initReg(CC1101_FREQ1, 0x66);
+  hal.radio.initReg(CC1101_FREQ0, 0x72);
+*/
+  
   sdev.initDone();
 }
 
